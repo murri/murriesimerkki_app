@@ -79,18 +79,6 @@ nav ul li a:hover {
 }
 /* Sign up button */
 
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #0000A8;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
-}
 /* Round corners */
 
 .round {
@@ -113,7 +101,7 @@ footer nav {
 
 table.profile {
   width: 100%;
-  margin-bottom: 0;
+  margin-bottom: 1;
 }
 
 td.main {

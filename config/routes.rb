@@ -1,4 +1,6 @@
 EsimerkkiApp::Application.routes.draw do
+  resources :posts
+
   get "pages/usage"
 
   get "pages/post"
