@@ -1,0 +1,23 @@
+<h1>Listing boat_cover_image_uids</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_cover_image_uids.each do |boat_cover_image_uid| %>
+  <tr>
+    <td><%= boat_cover_image_uid.name %></td>
+    <td><%= link_to 'Show', boat_cover_image_uid %></td>
+    <td><%= link_to 'Edit', edit_boat_cover_image_uid_path(boat_cover_image_uid) %></td>
+    <td><%= link_to 'Destroy', boat_cover_image_uid, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat cover image uid', new_boat_cover_image_uid_path %>

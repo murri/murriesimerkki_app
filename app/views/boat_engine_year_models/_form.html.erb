@@ -1,0 +1,21 @@
+<%= form_for(@boat_engine_year_model) do |f| %>
+  <% if @boat_engine_year_model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@boat_engine_year_model.errors.count, "error") %> prohibited this boat_engine_year_model from being saved:</h2>
+
+      <ul>
+      <% @boat_engine_year_model.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.date_select :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

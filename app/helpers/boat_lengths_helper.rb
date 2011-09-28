@@ -1,0 +1,2 @@
+module BoatLengthsHelper
+end

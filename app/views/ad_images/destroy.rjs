@@ -1,0 +1,2 @@
+page.hide "attachment_#{@ad_image.id.to_s}"
+page.remove "attachments_#{@ad_image.id.to_s}"

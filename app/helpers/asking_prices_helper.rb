@@ -1,0 +1,2 @@
+module AskingPricesHelper
+end

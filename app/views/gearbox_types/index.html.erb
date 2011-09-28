@@ -1,0 +1,23 @@
+<h1>Listing gearbox_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gearbox_types.each do |gearbox_type| %>
+  <tr>
+    <td><%= gearbox_type.name %></td>
+    <td><%= link_to 'Show', gearbox_type %></td>
+    <td><%= link_to 'Edit', edit_gearbox_type_path(gearbox_type) %></td>
+    <td><%= link_to 'Destroy', gearbox_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gearbox type', new_gearbox_type_path %>

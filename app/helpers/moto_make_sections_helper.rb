@@ -1,0 +1,2 @@
+module MotoMakeSectionsHelper
+end

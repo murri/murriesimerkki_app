@@ -1,0 +1,2 @@
+module ColorTypesHelper
+end

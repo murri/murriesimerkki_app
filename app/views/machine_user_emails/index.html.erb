@@ -1,0 +1,23 @@
+<h1>Listing machine_user_emails</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @machine_user_emails.each do |machine_user_email| %>
+  <tr>
+    <td><%= machine_user_email.name %></td>
+    <td><%= link_to 'Show', machine_user_email %></td>
+    <td><%= link_to 'Edit', edit_machine_user_email_path(machine_user_email) %></td>
+    <td><%= link_to 'Destroy', machine_user_email, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Machine user email', new_machine_user_email_path %>

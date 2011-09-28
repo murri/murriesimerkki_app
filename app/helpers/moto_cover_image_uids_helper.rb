@@ -1,0 +1,2 @@
+module MotoCoverImageUidsHelper
+end

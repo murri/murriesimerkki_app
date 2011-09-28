@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @subtype_section.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @subtype_section.type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_subtype_section_path(@subtype_section) %> |
+<%= link_to 'Back', subtype_sections_path %>

@@ -1,0 +1,25 @@
+<h1>Listing moto_model_sections</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Make</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_model_sections.each do |moto_model_section| %>
+  <tr>
+    <td><%= moto_model_section.name %></td>
+    <td><%= moto_model_section.make_id %></td>
+    <td><%= link_to 'Show', moto_model_section %></td>
+    <td><%= link_to 'Edit', edit_moto_model_section_path(moto_model_section) %></td>
+    <td><%= link_to 'Destroy', moto_model_section, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto model section', new_moto_model_section_path %>

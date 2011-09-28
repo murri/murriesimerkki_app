@@ -1,0 +1,23 @@
+<h1>Listing moto_color_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_color_types.each do |moto_color_type| %>
+  <tr>
+    <td><%= moto_color_type.name %></td>
+    <td><%= link_to 'Show', moto_color_type %></td>
+    <td><%= link_to 'Edit', edit_moto_color_type_path(moto_color_type) %></td>
+    <td><%= link_to 'Destroy', moto_color_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto color type', new_moto_color_type_path %>

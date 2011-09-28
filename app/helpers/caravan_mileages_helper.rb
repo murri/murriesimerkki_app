@@ -1,0 +1,2 @@
+module CaravanMileagesHelper
+end

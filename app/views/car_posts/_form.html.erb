@@ -1,0 +1,173 @@
+<%= form_for(@car_post) do |f| %>
+  <% if @car_post.errors.any? %>
+    <div id="error_explanation">
+<% form_for @car_post, :html => {:multipart => true} do |f| %>
+<% end %>
+      <h2><%= pluralize(@car_post.errors.count, "error") %> prohibited this car_post from being saved:</h2>
+
+      <ul>
+      <% @car_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div style="overflow:auto; height:900px;width:650px;">
+
+
+  <p>
+    <%= f.label :Tyyppi %><br />
+   <%=  collection_select(:car_post, :car_type_id, CarType.all, :id, :name , options ={:prompt => "Valitse tyyppi"} ) %>
+    </p>
+  <p>
+    <%= f.label :Merkki %><br />
+   <%= collection_select(:car_post, :car_make_section_id, CarMakeSection.find_all_by_car_type_id(@car_post.car_type_id), :id, :name, options ={:prompt => "Valitse merkki"}) %>
+  </p>
+  <p>
+    <%= f.label :Malli %><br />
+   <%=  collection_select(:car_post, :car_model_section_id, CarModelSection.all, :id, :name , options ={:prompt => "Valitse malli"} ) %>
+    </p>
+  <div class="field">
+    <%= f.label :Kuva%><br />
+   <%= f.file_field :car_cover_image_uid %>
+  </div>
+<%= image_tag @car_post.car_cover_image.thumb('100x100').url if @car_post.car_cover_image_uid %>
+
+  <div class="field">
+    <%= f.label :Kuvan_nimi%><br />
+    <%= f.text_field :car_cover_image_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Korimalli %><br />
+    <%=  collection_select(:car_post, :car_sub_type_id, CarSubType.all, :id, :name , options ={:prompt => "Valitse korimalli"} ) %>
+  </div>
+  <div class="field">
+    <%= f.label :Vuosimalli %><br />
+    <%= f.date_select :car_year_model %>
+  </div>
+  <p>
+    <%= f.label "Väri" %><br />
+   <%=  collection_select(:car_post, :car_color_id, CarColor.all, :id, :name , options ={:prompt => "Valitse vari"} ) %>
+    </p>
+ <p>
+    <%= f.label "Värityyppi" %><br />
+   <%=  collection_select(:car_post, :car_color_type_id, CarColorType.all, :id, :name , options ={:prompt => "Valitse varityyppi"} ) %>
+    </p>
+  <div class="field">
+    <%= f.label :Hinta %><br />
+    <%= f.text_field :car_price %>
+  </div>
+  <div class="field">
+    <%= f.label "Lisätiedot" %><br />
+    <%= f.text_area :car_information %>
+  </div>
+  <div class="field">
+    <%= f.label "Omistajien_määrä" %><br />
+    <%= f.text_field :car_total_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :Mittarilukema %><br />
+    <%= f.text_field :car_mileage %>
+  </div>
+   <p>
+    <%= f.label :Moottorin_tilavuus %><br />
+   <%=  collection_select(:car_post, :car_engine_size_id, CarEngineSize.all, :id, :name , options ={:prompt => "Valitse moottorin tilavuus"} ) %>
+    </p>
+  <p>
+    <%= f.label :Vetotapa %><br />
+   <%=  collection_select(:car_post, :car_drive_type_id, CarDriveType.all, :id, :name , options ={:prompt => "Valitse vetotapa"} ) %>
+    </p>
+  <p>
+    <%= f.label :Polttoaine %><br />
+   <%=  collection_select(:car_post, :car_fuel_type_id, CarFuelType.all, :id, :name , options ={:prompt => "Valitse polttoaine"} ) %>
+    </p>
+  <p>
+    <%= f.label :Vaihteisto %><br />
+   <%=  collection_select(:car_post, :car_gearbox_type_id, CarGearboxType.all, :id, :name , options ={:prompt => "Valitse vaihteisto"} ) %>
+    </p>
+  <div class="field">
+    <%= f.label :Teho %><br />
+    <%= f.text_field :car_power %>
+  </div>
+  <div class="field">
+    <%= f.label "Päästöt" %><br />
+    <%= f.text_field :car_emission %>
+  </div>
+  <div class="field">
+    <%= f.label :Huippunopeus %><br />
+    <%= f.text_field :car_top_speed %>
+  </div>
+  <div class="field">
+    <%= f.label :Kiihtyvyys_0_100 %><br />
+    <%= f.text_field :car_acceleration %>
+  </div>
+  <div class="field">
+    <%= f.label :Paino %><br />
+    <%= f.text_field :car_weight %>
+  </div>
+<H2>
+Omat tiedot
+</h2> 
+<h1>___________________________________________</h1>
+
+  <div class="field">
+    <%= f.label :Nimi %><br />
+    <%= f.text_field :car_user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Puhelin %><br />
+    <%= f.text_field :car_user_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %><br />
+    <%= f.text_field :car_user_email %>
+  </div>
+  <%= f.label :Maakunta %><br />
+   <%=  collection_select(:car_post, :car_domicile_type_id, CarDomicileType.all, :id, :name , options ={:prompt => "Valitse maakunta"} ) %>
+    </p>
+   <p>
+    <%= f.label :Paikkakunta %><br />
+   <%= collection_select(:car_post, :car_town_type_id, CarTownType.find_all_by_car_domicile_type_id(@car_post.car_domicile_type_id), :id, :name, options ={:prompt => "Valitse paikkakunta"}) %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select#car_post_car_type_id").change(function(){
+            var id_value_string = $(this).val();
+            if (id_value_string == "") { 
+                // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
+                $("select#car_post_car_make_section_id option").remove();
+                var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+                $(row).appendTo("select#car_post_car_make_section_id");
+            }
+            else {
+                // Send the request and update sub category dropdown 
+                $.ajax({
+                    dataType: "json",
+                    cache: false,
+                    url: '/car_make_sections/for_cartypeid/' + id_value_string,
+                    timeout: 2000,
+                    error: function(XMLHttpRequest, errorTextStatus, error){
+                        alert("Failed to submit : "+ errorTextStatus+" ;"+error);
+                    },
+                    success: function(data){                    
+                        // Clear all options from sub category select 
+                        $("select#car_post_car_make_section_id option").remove();
+                        //put in a empty default line
+                        var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+                        $(row).appendTo("select#car_post_car_make_section_id");                        
+                        // Fill sub category select 
+                        $.each(data, function(i, j){
+                            row = "<option value=\"" + j.sub_section.id + "\">" + j.sub_section.name + "</option>";   
+                            $(row).appendTo("select#car_post_car_make_section_id");                     
+                        });             
+                     }
+                });
+            };
+                });
+    });
+</script>
+

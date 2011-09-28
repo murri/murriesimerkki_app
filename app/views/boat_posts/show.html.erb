@@ -1,0 +1,137 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Boat type:</b>
+  <%= @boat_post.boat_type.name %>
+</p>
+
+<p>
+  <b>Boat make:</b>
+  <%= @boat_post.boat_make.name %>
+</p>
+
+<p>
+  <b>Boat sub type:</b>
+  <%= @boat_post.boat_sub_type.name %>
+</p>
+
+<p>
+  <b>Boat cover image uid:</b>
+  <%= image_tag @boat_post.boat_cover_image.url %>
+  <%= image_tag @boat_post.boat_cover_image.thumb('400x200#').url %>
+  <%= image_tag @boat_post.boat_cover_image.jpg.url %>
+</p>
+
+<p>
+  <b>Boat cover image name:</b>
+  <%= @boat_post.boat_cover_image_name %>
+</p>
+
+<p>
+  <b>Boat model:</b>
+  <%= @boat_post.boat_model %>
+</p>
+
+<p>
+  <b>Boat year model:</b>
+  <%= @boat_post.boat_year_model %>
+</p>
+
+<p>
+  <b>Boat asking price:</b>
+  <%= @boat_post.boat_asking_price %>
+</p>
+
+<p>
+  <b>Boat body material:</b>
+  <%= @boat_post.boat_body_material.name %>
+</p>
+
+<p>
+  <b>Boat color:</b>
+  <%= @boat_post.boat_color.name %>
+</p>
+
+<p>
+  <b>Boat length:</b>
+  <%= @boat_post.boat_length %>
+</p>
+
+<p>
+  <b>Boat height:</b>
+  <%= @boat_post.boat_height %>
+</p>
+
+<p>
+  <b>Boat width:</b>
+  <%= @boat_post.boat_width %>
+</p>
+
+<p>
+  <b>Boat weight:</b>
+  <%= @boat_post.boat_weight %>
+</p>
+
+<p>
+  <b>Boat draught:</b>
+  <%= @boat_post.boat_draught %>
+</p>
+
+<p>
+  <b>Boat engine make:</b>
+  <%= @boat_post.boat_engine_make.name %>
+</p>
+
+<p>
+  <b>Boat engine year model:</b>
+  <%= @boat_post.boat_engine_year_model %>
+</p>
+
+<p>
+  <b>Boat engine fuel type:</b>
+  <%= @boat_post.boat_engine_fuel_type.name %>
+</p>
+
+<p>
+  <b>Boat note:</b>
+  <%= @boat_post.boat_note %>
+</p>
+
+<p>
+  <b>Boat total owner:</b>
+  <%= @boat_post.boat_total_owner %>
+</p>
+
+<p>
+  <b>Boat storage equipment:</b>
+  <%= @boat_post.boat_storage_equipment %>
+</p>
+
+<p>
+  <b>Boat user name:</b>
+  <%= @boat_post.boat_user_name %>
+</p>
+
+<p>
+  <b>Boat user phone:</b>
+  <%= @boat_post.boat_user_phone %>
+</p>
+
+<p>
+  <b>Boat user email:</b>
+  <%= @boat_post.boat_user_email %>
+</p>
+
+<p>
+  <b>Boat domicile type:</b>
+  <%= @boat_post.boat_domicile_type.name %>
+</p>
+
+<p>
+  <b>Boat town type:</b>
+  <%= @boat_post.boat_town_type.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_boat_post_path(@boat_post) %> |
+<%= link_to 'Back', boat_posts_path %>

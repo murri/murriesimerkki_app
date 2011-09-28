@@ -1,0 +1,2 @@
+module CarEmissionsHelper
+end

@@ -1,0 +1,21 @@
+<%= form_for(@caravan_information) do |f| %>
+  <% if @caravan_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@caravan_information.errors.count, "error") %> prohibited this caravan_information from being saved:</h2>
+
+      <ul>
+      <% @caravan_information.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_area :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

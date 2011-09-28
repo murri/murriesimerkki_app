@@ -1,0 +1,23 @@
+<h1>Listing boat_colors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_colors.each do |boat_color| %>
+  <tr>
+    <td><%= boat_color.name %></td>
+    <td><%= link_to 'Show', boat_color %></td>
+    <td><%= link_to 'Edit', edit_boat_color_path(boat_color) %></td>
+    <td><%= link_to 'Destroy', boat_color, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat color', new_boat_color_path %>

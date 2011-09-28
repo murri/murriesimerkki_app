@@ -1,0 +1,23 @@
+<h1>Listing machine_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @machine_types.each do |machine_type| %>
+  <tr>
+    <td><%= machine_type.name %></td>
+    <td><%= link_to 'Show', machine_type %></td>
+    <td><%= link_to 'Edit', edit_machine_type_path(machine_type) %></td>
+    <td><%= link_to 'Destroy', machine_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Machine type', new_machine_type_path %>

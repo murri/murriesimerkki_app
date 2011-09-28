@@ -1,0 +1,113 @@
+<%= form_for(@moto_post) do |f| %>
+  <% if @moto_post.errors.any? %>
+    <div id="error_explanation">
+<% form_for @moto_post, :html => {:multipart => true} do |f| %>
+<% end %>
+
+
+      <h2><%= pluralize(@moto_post.errors.count, "error") %> prohibited this moto_post from being saved:</h2>
+
+      <ul>
+      <% @moto_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div style="overflow:auto; height:800px;width:650px;">
+
+  <p>
+    <%= f.label :Ajoneuvolaji %><br />
+   <%=  collection_select(:moto_post, :vehicle_id, Vehicle.all, :id, :name , options ={:prompt => "Valitse ajoneuvolaji"} ) %>
+    </p>
+  <p>
+    <%= f.label :Tyyppi %><br />
+   <%= collection_select(:moto_post, :sub_vehicle_id, SubVehicle.find_all_by_vehicle_id(@moto_post.vehicle_id), :id, :name, options ={:prompt => "Valitse tyyppi"}) %>
+  </p>
+  <p>
+    <%= f.label :Merkki %><br />
+   <%= collection_select(:moto_post, :moto_make_id, MotoMake.find_all_by_sub_vehicle_id(@moto_post.sub_vehicle_id), :id, :name, options ={:prompt => "Valitse merkki"}) %>
+  </p>
+  <p>
+    <%= f.label :Malli %><br />
+   <%= collection_select(:moto_post, :moto_model_id, MotoModel.find_all_by_moto_make_id(@moto_post.moto_make_id), :id, :name, options ={:prompt => "Valitse malli"}) %>
+  </p>
+  <div class="field">
+    <%= f.label :Kuva %><br />
+    <%= f.file_field :moto_cover_image_uid %>
+  </div>
+<%= image_tag @moto_post.moto_cover_image.thumb('100x100').url if @moto_post.moto_cover_image_uid %>
+
+  <div class="field">
+    <%= f.label :Kuvan_nimi%><br />
+    <%= f.text_field :moto_cover_image_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Rekisterinumero %><br />
+    <%= f.text_field :moto_registration_number %>
+  </div>
+  <div class="field">
+    <%= f.label :Hinta %><br />
+    <%= f.text_field :moto_price %>
+  </div>
+  <div class="field">
+    <%= f.label :Vuosimalli %><br />
+    <%= f.date_select :moto_year_model %>
+  </div>
+  <p>
+    <%= f.label :Vari %><br />
+   <%=  collection_select(:moto_post, :moto_color_id, MotoColor.all, :id, :name , options ={:prompt => "Valitse vari"} ) %>
+    </p>
+ <p>
+    <%= f.label :Varityyppi %><br />
+   <%=  collection_select(:moto_post, :moto_color_type_id, MotoColorType.all, :id, :name , options ={:prompt => "Valitse varityyppy"} ) %>
+    </p>
+  <p>
+    <%= f.label :Moottorin_tyyppi %><br />
+   <%=  collection_select(:moto_post, :moto_engine_type_id, MotoEngineType.all, :id, :name , options ={:prompt => "Valitse moottorin tyyppi"} ) %>
+    </p>
+   <p>
+    <%= f.label :Moottorin_tilavuus %><br />
+   <%=  collection_select(:moto_post, :moto_engine_size_id, MotoEngineSize.all, :id, :name , options ={:prompt => "Valitse moottorin tilavuus"} ) %>
+    </p>
+  <div class="field">
+    <%= f.label :Lisatiedot%><br />
+    <%= f.text_area :moto_information %>
+  </div>
+  <div class="field">
+    <%= f.label :Mittarilukema %><br />
+    <%= f.text_field :moto_mileage %>
+  </div>
+  <p>
+    <%= f.label :Vetotapa %><br />
+   <%=  collection_select(:moto_post, :moto_drive_type_id, MotoDriveType.all, :id, :name , options ={:prompt => "Valitse vetotapa"} ) %>
+    </p>
+<h2>
+Omat tiedot
+</h2>
+<h1>___________________________________________</h1>
+
+  <div class="field">
+    <%= f.label :Nimi%><br />
+    <%= f.text_field :moto_user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Puhelin%><br />
+    <%= f.text_field :moto_user_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %><br />
+    <%= f.text_field :moto_user_email %>
+  </div>
+  <div class="field">
+     <%= f.label :Maakunta %><br />
+   <%=  collection_select(:moto_post, :moto_domicile_type_id, MotoDomicileType.all, :id, :name , options ={:prompt => "Valitse maakunta"} ) %>
+  </div>
+  <p>
+    <%= f.label :Paikkakunta %><br />
+   <%= collection_select(:moto_post, :moto_town_type_id, MotoTownType.find_all_by_moto_domicile_type_id(@moto_post.moto_domicile_type_id), :id, :name, options ={:prompt => "Valitse paikkakunta"}) %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

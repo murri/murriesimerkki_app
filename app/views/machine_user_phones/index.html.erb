@@ -1,0 +1,23 @@
+<h1>Listing machine_user_phones</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @machine_user_phones.each do |machine_user_phone| %>
+  <tr>
+    <td><%= machine_user_phone.name %></td>
+    <td><%= link_to 'Show', machine_user_phone %></td>
+    <td><%= link_to 'Edit', edit_machine_user_phone_path(machine_user_phone) %></td>
+    <td><%= link_to 'Destroy', machine_user_phone, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Machine user phone', new_machine_user_phone_path %>

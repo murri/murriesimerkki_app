@@ -1,0 +1,2 @@
+module BoatColorsHelper
+end

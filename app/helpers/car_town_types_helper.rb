@@ -1,0 +1,2 @@
+module CarTownTypesHelper
+end

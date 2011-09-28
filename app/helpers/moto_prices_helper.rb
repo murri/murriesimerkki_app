@@ -1,0 +1,2 @@
+module MotoPricesHelper
+end

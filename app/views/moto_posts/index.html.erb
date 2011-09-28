@@ -1,0 +1,44 @@
+<h1>30 viimeisintä</h1>
+
+
+<table>
+  <tr>
+     <th>Merkki</th>
+    <th>Malli</th>
+    <th></th>
+    <th>Hinta</th>
+    <th>Vuosimalli</th>
+    <th>Moottorin tyyppi</th>
+    <th>Moottorin tilavuus</th>
+    <th>Mittarilukema</th>
+    <th>Myyjä</th>
+    <th>Puhelin</th>
+    <th>Kaupunki</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_posts.each do |moto_post| %>
+  <tr>
+    <td><%= moto_post.moto_make_id %></td>
+    <td><%= moto_post.moto_model_id %></td>
+    <td><%= moto_post.moto_cover_image_uid %></td>
+    <td><%= moto_post.moto_price %></td>
+    <td><%= moto_post.moto_year_model %></td>
+    <td><%= moto_post.moto_engine_type_id %></td>
+    <td><%= moto_post.moto_engine_size_id %></td>
+    <td><%= moto_post.moto_mileage %></td>
+    <td><%= moto_post.moto_user_name %></td>
+    <td><%= moto_post.moto_user_phone %></td>
+    <td><%= moto_post.moto_town_type_id %></td>
+    <td><%= link_to 'Show', moto_post %></td>
+    <td><%= link_to 'Edit', edit_moto_post_path(moto_post) %></td>
+    <td><%= link_to 'Destroy', moto_post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Jätä ilmoitus', new_moto_post_path %>

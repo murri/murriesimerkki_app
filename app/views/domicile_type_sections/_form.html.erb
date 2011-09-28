@@ -1,0 +1,25 @@
+<%= form_for(@domicile_type_section) do |f| %>
+  <% if @domicile_type_section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@domicile_type_section.errors.count, "error") %> prohibited this domicile_type_section from being saved:</h2>
+
+      <ul>
+      <% @domicile_type_section.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :boats_position_town_type_id %><br />
+    <%= f.text_field :boats_position_town_type_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

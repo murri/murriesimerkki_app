@@ -1,0 +1,2 @@
+module CaravanYearModelsHelper
+end

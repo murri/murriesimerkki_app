@@ -1,0 +1,23 @@
+<h1>Listing registration_numbers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @registration_numbers.each do |registration_number| %>
+  <tr>
+    <td><%= registration_number.name %></td>
+    <td><%= link_to 'Show', registration_number %></td>
+    <td><%= link_to 'Edit', edit_registration_number_path(registration_number) %></td>
+    <td><%= link_to 'Destroy', registration_number, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Registration number', new_registration_number_path %>

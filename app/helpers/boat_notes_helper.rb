@@ -1,0 +1,2 @@
+module BoatNotesHelper
+end

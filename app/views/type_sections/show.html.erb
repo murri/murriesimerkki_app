@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @type_section.name %>
+</p>
+
+<p>
+  <b>Vehicle class:</b>
+  <%= @type_section.vehicle_class_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_type_section_path(@type_section) %> |
+<%= link_to 'Back', type_sections_path %>

@@ -1,0 +1,2 @@
+module CaravanUserEmailsHelper
+end

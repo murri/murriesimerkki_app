@@ -1,0 +1,23 @@
+<h1>Listing moto_cover_image_names</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_cover_image_names.each do |moto_cover_image_name| %>
+  <tr>
+    <td><%= moto_cover_image_name.name %></td>
+    <td><%= link_to 'Show', moto_cover_image_name %></td>
+    <td><%= link_to 'Edit', edit_moto_cover_image_name_path(moto_cover_image_name) %></td>
+    <td><%= link_to 'Destroy', moto_cover_image_name, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto cover image name', new_moto_cover_image_name_path %>

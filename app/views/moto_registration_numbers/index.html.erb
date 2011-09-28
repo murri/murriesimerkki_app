@@ -1,0 +1,23 @@
+<h1>Listing moto_registration_numbers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_registration_numbers.each do |moto_registration_number| %>
+  <tr>
+    <td><%= moto_registration_number.name %></td>
+    <td><%= link_to 'Show', moto_registration_number %></td>
+    <td><%= link_to 'Edit', edit_moto_registration_number_path(moto_registration_number) %></td>
+    <td><%= link_to 'Destroy', moto_registration_number, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto registration number', new_moto_registration_number_path %>

@@ -1,8 +1,200 @@
-<h1>Search</h1>
+<h1>Advanced search</h1>
 <p>
-  Get help on Ruby on Rails Tutorial at the
-  <a href="http://railstutorial.org/help">Rails Tutorial help page</a>.
-  To get help on this sample app, see the
-  <a href="http://railstutorial.org/book">Rails Tutorial book</a>.
-</p>
+ <html>
+<head>
+
+<body>
+<h3>Car Type</h3>
+
+<form name="myform" action="http://www.mydomain.com/myformhandler.cgi" method="POST">
+<div align="left">
+<select name="mydropdown">
+<option value="Any">Any</option>
+<option value="Van">Van</option>
+<option value="Minibus">Minibus</option>
+<option value="Light truck">Light truck</option>
+
+</select>
+</div>
+</form>
+<div>
+<h3>Make & Model</h3>
+
+<form method="post" action="">
+<div align="left">
+
+<h4>Make</h4>
+
+<select multiple name="music" size="4">
+<option value="Acadian" selected>Acadian</option>
+<option value="Adler" >Adler</option>
+<option value="Aleko" >Aleko</option>
+<option value="Alfa Romeo" >Alfa Romeo</option>
+<option value="AMC" >AMC</option>
+<option value="Armstrong Siddeley" >Armstrong Siddeley</option>
+<option value="Aston Martin" >Aston Martin</option>
+<option value="Auburn" >Auburn</option>
+<option value="Audi" >Audi</option>
+<option value="Austin" >Austin</option>
+</select>
+</form>
+
+<h4>Model</h4>
+<div align="left">
+
+<select multiple name="music" size="4">
+<option value="145" selected>145</option>
+<option value="146" >146</option>
+<option value="147" >147</option>
+<option value="155" >155</option>
+<option value="156" >159</option>
+<option value="159" >164</option>
+<option value="164" >164</option>
+<option value="166" >166</option>
+<option value="1750" >1750</option>
+<option value="2000" >2000</option>
+</select>
+
+<form>
+<h4>Engine model</h4>
+
+<input type="text" name="firstname" /><br />
+</form>
+<div class="bold mt10 base_font"><h4>Sub type</h4>
+</div>
+            <div class="mt5">
+
+                <input type="radio" name="id_car_type[]" id="id_car_type" value="" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" checked="checked" />
+                <label for="id_car_type" class="bold small_text9">Any</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="id_car_type[]" id="no_sub_type" value="0" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);"  />
+                <label for="no_sub_type" class="bold small_text9">No cars</label>
+            </div>
+            <table width="90%" cellpadding="4" cellspacing="0" border="0" align="center" name="id_cars[]" id="id_all_car" class="mt5">
+                <tr><td  ><label for="id_car_type2"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/2.gif" title="Sedan" alt="Sedan" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type2" value="2" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type2">Sedan</label></div></td><td  ><label for="id_car_type4"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/4.gif" title="Station Wagon" alt="Station Wagon" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type4" value="4" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type4">Station Wagon</label></div></td><td  ><label for="id_car_type3"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/3.gif" title="Hatchback" alt="Hatchback" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type3" value="3" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type3">Hatchback</label></div></td></tr><tr><td  ><label for="id_car_type7"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/7.gif" title="MPV" alt="MPV" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type7" value="7" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type7">MPV</label></div></td><td  ><label for="id_car_type1"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/1.gif" title="Coupé" alt="Coupé" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type1" value="1" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type1">Coupé</label></div></td><td  ><label for="id_car_type9"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/9.gif" title="Convertible" alt="Convertible" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type9" value="9" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type9">Convertible</label></div></td></tr><tr><td  ><label for="id_car_type5"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/5.gif" title="4x4" alt="4x4" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type5" value="5" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type5">4x4</label></div></td><td  ><label for="id_car_type18"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/18.gif" title="Racing vehicle" alt="Racing vehicle" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type18" value="18" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type18">Racing vehicle</label></div></td><td  ><label for="id_car_type8"><img src="http://script.nettiauto.com/extra/siteimage/sub_type/1/8.jpg" title="Other" alt="Other" /></label><div class="ptb5"><input type="checkbox" name="id_car_type[]" id="id_car_type8" value="8" onclick="javascript:changeChkOpt(this);callAjaxAdv(this.form);" /><label for="id_car_type8">Other</label></div></td></tr><tr><td  colspan="2">&nbsp;</td></tr>
+
+            </table>
+         </div>
+     </div>
+
+
+<input type="submit" value="Search">
+</form>
+
+</body>
+<head>
+    <title>My Google API Application</title>
+    <script src="https://www.google.com/jsapi?key=ABQIAAAAxtnRsHLq_0WWng5o2vVXxRSWByDFfi3k0jG_pMKESZMTS-idihRGhz6nYRVX9vaPMYLVbmwWgCRLkw" type="text/javascript"></script>
+    <script language="Javascript" type="text/javascript">
+    //<![CDATA[
+
+    google.load("search", "1");
+
+    function OnLoad() {
+      // Create a search control
+      var searchControl = new google.search.SearchControl();
+
+      // Add in a full set of searchers
+      var localSearch = new google.search.LocalSearch();
+      searchControl.addSearcher(localSearch);
+      searchControl.addSearcher(new google.search.WebSearch());
+      searchControl.addSearcher(new google.search.VideoSearch());
+      searchControl.addSearcher(new google.search.BlogSearch());
+
+      // Set the Local Search center point
+      localSearch.setCenterPoint("BMW, BMW");
+
+      // Tell the searcher to draw itself and tell it where to attach
+      searchControl.draw(document.getElementById("searchcontrol"));
+
+      // Execute an inital search
+      searchControl.execute("Google");
+    }
+    google.setOnLoadCallback(OnLoad);
+
+    //]]>
+    </script>
+  </head>
+<!-- ++Begin Map Search Control Wizard Generated Code++ -->
+  <!--
+  // Created with a Google AJAX Search Wizard
+  // http://code.google.com/apis/ajaxsearch/wizards.html
+  -->
+
+  <!--
+  // The Following div element will end up holding the map search control.
+  // You can place this anywhere on your page
+  -->
+  <div id="mapsearch">
+    <span style="color:#676767;font-size:11px;margin:10px;padding:4px;">Loading...</span>
+  </div>
+
+  <!-- Maps Api, Ajax Search Api and Stylesheet
+  // Note: If you are already using the Maps API then do not include it again
+  //       If you are already using the AJAX Search API, then do not include it
+  //       or its stylesheet again
+  //
+  // The Key Embedded in the following script tags is designed to work with
+  // the following site:
+  // http://localhost:3000/search
+  -->
+  <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAxtnRsHLq_0WWng5o2vVXxRTceg8kLGzQ5_3j9g4tubA2pJPDZRQzz8pFy4mExtX67_13usXzKfb3AQ"
+    type="text/javascript"></script>
+  <script src="http://www.google.com/uds/api?file=uds.js&v=1.0&source=uds-msw&key=ABQIAAAAxtnRsHLq_0WWng5o2vVXxRTceg8kLGzQ5_3j9g4tubA2pJPDZRQzz8pFy4mExtX67_13usXzKfb3AQ"
+    type="text/javascript"></script>
+  <style type="text/css">
+    @import url("http://www.google.com/uds/css/gsearch.css");
+  </style>
+
+  <!-- Map Search Control and Stylesheet -->
+  <script type="text/javascript">
+    window._uds_msw_donotrepair = true;
+  </script>
+  <script src="http://www.google.com/uds/solutions/mapsearch/gsmapsearch.js?mode=new"
+    type="text/javascript"></script>
+  <style type="text/css">
+    @import url("http://www.google.com/uds/solutions/mapsearch/gsmapsearch.css");
+  </style>
+
+  <style type="text/css">
+    .gsmsc-mapDiv {
+      height : 250px;
+    }
+
+    .gsmsc-idleMapDiv {
+      height : 250px;
+    }
+
+    #mapsearch {
+      width : 300px;
+      margin: 10px;
+      padding: 4px;
+    }
+  </style>
+  <script type="text/javascript">
+    function LoadMapSearchControl() {
+
+      var options = {
+            zoomControl : GSmapSearchControl.ZOOM_CONTROL_ENABLE_ALL,
+            title : "Agilo Partners Oy",
+            url : "http://www.agilopartners.fi",
+            idleMapZoom : GSmapSearchControl.ACTIVE_MAP_ZOOM-2,
+            activeMapZoom : GSmapSearchControl.ACTIVE_MAP_ZOOM-2
+            }
+
+      new GSmapSearchControl(
+            document.getElementById("mapsearch"),
+            "Bulevardi 2 A,  00120 Helsinki",
+            options
+            );
+
+    }
+    // arrange for this function to be called during body.onload
+    // event processing
+    GSearch.setOnLoadCallback(LoadMapSearchControl);
+  </script>
+<!-- ++End Map Search Control Wizard Generated Code++ -->
+
+  <body>
+    <div id="searchcontrol">Loading...</div>
+</html></p>
 

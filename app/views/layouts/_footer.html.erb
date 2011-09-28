@@ -1,20 +1,12 @@
 <footer>
- <% logo = image_tag("VIP.jpeg", :alt => "BMW", :class => "round") %>
-  <%= link_to logo, root_path %>
- 
- <% logo = image_tag("VIP.jpeg", :alt => "BMW", :class => "round") %>
-  <%= link_to logo, root_path %>
-
- <% logo = image_tag("VIP.jpeg", :alt => "BMW", :class => "round") %>
-  <%= link_to logo, root_path %>
-
- <nav class="round">
+  <nav class="round">
     <ul>
-      <li><%= link_to "About", about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
-     <li><%= link_to "Usage rights", usage_path %></li>
-    </ul>
+      <li><%= link_to "Tietoa palvelusta", about_path %></li>
+      <li><%= link_to "Ota yhteyttä", contact_path %></li>
+      <li><a href="http://tekniikanmaailma.fi/">Uutiset</a></li>
+     <li><%= link_to "Käyttöoikeudet", usage_path %></li>
+ <li><a href="http://www.facebook.com"><%= image_tag("facebook_login.gif") %></a></li>
+
   </nav>
 </footer>
 

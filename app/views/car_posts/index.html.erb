@@ -1,0 +1,48 @@
+<h1>30 viimeisintä</h1>
+<!-- projects/index.rhtml -->
+<% form_tag car_posts_path, :method => 'get' do %>
+ 
+
+
+
+<% end %>
+
+<table>
+  <tr>
+    <th>Merkki</th>
+    <th>Malli</th>
+    <th></th>
+    <th>Vuosimalli</th>
+    <th>Hinta</th>
+    <th>Mittarilukema</th>
+    <th>Moottorin tilavuus</th>
+    <th>Myyjä</th>
+    <th>Puhelin</th>
+    <th>Email</th>
+    <th>Sijainti</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_posts.each do |car_post| %>
+  <tr>
+    <td><%= car_post.car_make_section.name %></td>
+    <td><%= car_post.car_cover_image_uid %></td>
+    <td><%= car_post.car_year_model %></td>
+    <td><%= car_post.car_price %></td>
+    <td><%= car_post.car_mileage %></td>
+    <td><%= car_post.car_engine_size.name %></td>
+    <td><%= car_post.car_user_name %></td>
+    <td><%= car_post.car_user_phone %></td>
+    <td><%= car_post.car_town_type.name %></td>
+    <td><%= link_to 'Show', car_post %></td>
+    <td><%= link_to 'Edit', edit_car_post_path(car_post) %></td>
+    <td><%= link_to 'Destroy', car_post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Jätä ilmoitus', new_car_post_path %>

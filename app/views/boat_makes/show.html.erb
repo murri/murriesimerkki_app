@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @boat_make.name %>
+</p>
+
+<p>
+  <b>Boat type:</b>
+  <%= @boat_make.boat_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_boat_make_path(@boat_make) %> |
+<%= link_to 'Back', boat_makes_path %>

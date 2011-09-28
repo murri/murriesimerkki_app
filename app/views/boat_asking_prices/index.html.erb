@@ -1,0 +1,23 @@
+<h1>Listing boat_asking_prices</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_asking_prices.each do |boat_asking_price| %>
+  <tr>
+    <td><%= boat_asking_price.name %></td>
+    <td><%= link_to 'Show', boat_asking_price %></td>
+    <td><%= link_to 'Edit', edit_boat_asking_price_path(boat_asking_price) %></td>
+    <td><%= link_to 'Destroy', boat_asking_price, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat asking price', new_boat_asking_price_path %>

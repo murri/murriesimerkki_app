@@ -1,0 +1,2 @@
+module CarPostsHelper
+end

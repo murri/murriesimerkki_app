@@ -1,0 +1,45 @@
+<div style="overflow:auto; height: 500px; width:690px">
+<table cellpadding="0" cellspacing="0" style="width:1500px;">
+<tr>
+
+
+<h1>Listing posts</h1>
+<%= will_paginate(@ads) %>
+
+<table>
+  <tr>
+       <th>Make</th>
+    <th>Model</th>
+    <th>Subtype</th>
+    <th>Year model</th>
+        <th>Price</th>
+        <th>Mileage</th>
+    <th>Engine size</th>
+ 
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ads.each do |ad| %>
+  <tr>
+    <td><%= ad.make %></td>
+    <td><%= ad.model %></td>
+    <td><%= ad.subtype %></td>
+
+    <td><%= ad.yearmodel %></td>
+    <td><%= ad.price %></td>
+    <td><%= ad.mileage %></td>
+    <td><%= ad.enginesize %></td>
+
+
+    <td><%= link_to 'Show', ad %></td>
+    <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
+    <td><%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ad', new_ad_path %>

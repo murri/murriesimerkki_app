@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @machine_sub_type_section.name %>
+</p>
+
+<p>
+  <b>Machine category:</b>
+  <%= @machine_sub_type_section.machine_category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_machine_sub_type_section_path(@machine_sub_type_section) %> |
+<%= link_to 'Back', machine_sub_type_sections_path %>

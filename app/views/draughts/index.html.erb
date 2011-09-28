@@ -1,0 +1,23 @@
+<h1>Listing draughts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @draughts.each do |draught| %>
+  <tr>
+    <td><%= draught.name %></td>
+    <td><%= link_to 'Show', draught %></td>
+    <td><%= link_to 'Edit', edit_draught_path(draught) %></td>
+    <td><%= link_to 'Destroy', draught, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Draught', new_draught_path %>

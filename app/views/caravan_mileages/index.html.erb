@@ -1,0 +1,23 @@
+<h1>Listing caravan_mileages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_mileages.each do |caravan_mileage| %>
+  <tr>
+    <td><%= caravan_mileage.name %></td>
+    <td><%= link_to 'Show', caravan_mileage %></td>
+    <td><%= link_to 'Edit', edit_caravan_mileage_path(caravan_mileage) %></td>
+    <td><%= link_to 'Destroy', caravan_mileage, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan mileage', new_caravan_mileage_path %>

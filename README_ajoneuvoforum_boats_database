@@ -1,0 +1,50 @@
+http://www.falsepositives.com/index.php/2011/01/18/a-preamble-to-building-a-cascading-drop-down-selection-list-for-ruby-on-rails-with-jquery-ajax/
+http://www.falsepositives.com/index.php/2010/05/28/building-a-casscading-drop-down-selection-list-for-ruby-on-rails-with-jquery-ajax/
+
+Lataa JQuery käyttöön 
+
+app/views/layouts/application.html.erb
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js" %>
+
+generoi Sections ja SubSections controllerit/modelit scaffoldilla 
+(nämä ovat siis tätä esimerkkiä varten, foorumien tapauksessa olvat tietenkin esim. Cities -> Cars tms.)
+$ rails generate scaffold Boat_Type name:string
+$ rails generate scaffold Boat_Make name:string boat_type_id:integer
+$ rails generate scaffold Boat_Sub_Type name:string 
+
+$ rails generate scaffold Boat_cover_image_uid name:string
+$ rails generate scaffold Boat_cover_image_name name:string
+
+
+$ rails generate scaffold Boat_Body_Material name:string
+
+$ rails generate scaffold Boat_Color name:string
+$ rails generate scaffold Boat_Engine_Make name:string
+$ rails generate scaffold Boat_Engine_Fuel_Type name:string
+
+
+
+
+
+
+$ rails generate scaffold Boat_Domicile_Type name:string
+$ rails generate scaffold Boat_Town_Type name:string boat_domicile_type_id:integer
+
+
+luo vastaavat taulut tietokantaan
+$ rake db:migrate
+
+luodaan BoatPost controlleri, jossa noi näytetään
+$ rails generate scaffold BoatPost boat_type_id:integer boat_make_id:integer boat_sub_type_id:integer boat_cover_image_uid:string boat_cover_image_name:string boat_model:string boat_year_model:date boat_asking_price:string boat_body_material_id:integer boat_color_id:integer boat_length:string boat_height:string boat_width:string boat_weight:string boat_draught:string boat_engine_make_id:integer boat_engine_year_model:date boat_engine_fuel_type_id:integer boat_note:text boat_total_owner:string boat_user_name:string boat_user_phone:string boat_user_email:string boat_domicile_type_id:integer boat_town_type_id:integer
+$ rake db:migrate
+
+
+sitten postin mukaan muutokset kontrollereihin ja vieweihin, kuten tässä aplikaatiossa on tehty.
+
+sit viimeisenä pitää vielä lisätä config/routes.rb 
+match '/sub_sections/for_sectionid/:id' => 'sub_sections#for_sectionid'
+
+tämä johtuu siitä, että sub_sections on REST-controlleri, eli oletuksena on vaan noi 
+(valmiiksi scaffoldilla generoituvat) index, show, new,edit, create, create, update, destroy actionit. Jos (kun)
+haluaa käyttää muita, pitää erikseen mainita kyseiset reitit. Yleensä jos tekee mieli tehdä monta omaa, pitäisi ehkä
+miettiä, pitäisikö mieluummin tehdä uusi kontrolleri jollekkin resurssille. 

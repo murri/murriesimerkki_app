@@ -1,0 +1,2 @@
+module CarPowersHelper
+end

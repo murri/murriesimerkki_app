@@ -1,0 +1,2 @@
+module MachineGrossWeightsHelper
+end

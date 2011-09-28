@@ -1,0 +1,21 @@
+<%= form_for(@boat_draught) do |f| %>
+  <% if @boat_draught.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@boat_draught.errors.count, "error") %> prohibited this boat_draught from being saved:</h2>
+
+      <ul>
+      <% @boat_draught.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

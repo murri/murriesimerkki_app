@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @boat_town_type_section.name %>
+</p>
+
+<p>
+  <b>Boat domicile type:</b>
+  <%= @boat_town_type_section.boat_domicile_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_boat_town_type_section_path(@boat_town_type_section) %> |
+<%= link_to 'Back', boat_town_type_sections_path %>

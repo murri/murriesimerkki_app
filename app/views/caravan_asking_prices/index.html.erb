@@ -1,0 +1,23 @@
+<h1>Listing caravan_asking_prices</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_asking_prices.each do |caravan_asking_price| %>
+  <tr>
+    <td><%= caravan_asking_price.name %></td>
+    <td><%= link_to 'Show', caravan_asking_price %></td>
+    <td><%= link_to 'Edit', edit_caravan_asking_price_path(caravan_asking_price) %></td>
+    <td><%= link_to 'Destroy', caravan_asking_price, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan asking price', new_caravan_asking_price_path %>

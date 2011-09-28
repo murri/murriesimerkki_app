@@ -1,0 +1,23 @@
+<h1>Listing cover_image_names</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cover_image_names.each do |cover_image_name| %>
+  <tr>
+    <td><%= cover_image_name.name %></td>
+    <td><%= link_to 'Show', cover_image_name %></td>
+    <td><%= link_to 'Edit', edit_cover_image_name_path(cover_image_name) %></td>
+    <td><%= link_to 'Destroy', cover_image_name, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cover image name', new_cover_image_name_path %>

@@ -1,0 +1,23 @@
+<h1>Listing car_cover_image_uids</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_cover_image_uids.each do |car_cover_image_uid| %>
+  <tr>
+    <td><%= car_cover_image_uid.name %></td>
+    <td><%= link_to 'Show', car_cover_image_uid %></td>
+    <td><%= link_to 'Edit', edit_car_cover_image_uid_path(car_cover_image_uid) %></td>
+    <td><%= link_to 'Destroy', car_cover_image_uid, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car cover image uid', new_car_cover_image_uid_path %>

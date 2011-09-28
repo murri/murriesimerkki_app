@@ -1,0 +1,23 @@
+<h1>Listing boat_weights</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_weights.each do |boat_weight| %>
+  <tr>
+    <td><%= boat_weight.name %></td>
+    <td><%= link_to 'Show', boat_weight %></td>
+    <td><%= link_to 'Edit', edit_boat_weight_path(boat_weight) %></td>
+    <td><%= link_to 'Destroy', boat_weight, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat weight', new_boat_weight_path %>

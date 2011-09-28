@@ -1,0 +1,2 @@
+module CarSubTypesHelper
+end

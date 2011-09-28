@@ -1,0 +1,2 @@
+module BoatBodyMaterialsHelper
+end

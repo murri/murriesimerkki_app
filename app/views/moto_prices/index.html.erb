@@ -1,0 +1,23 @@
+<h1>Listing moto_prices</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_prices.each do |moto_price| %>
+  <tr>
+    <td><%= moto_price.name %></td>
+    <td><%= link_to 'Show', moto_price %></td>
+    <td><%= link_to 'Edit', edit_moto_price_path(moto_price) %></td>
+    <td><%= link_to 'Destroy', moto_price, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto price', new_moto_price_path %>

@@ -1,0 +1,25 @@
+<h1>Listing boat_makes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Boat type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_makes.each do |boat_make| %>
+  <tr>
+    <td><%= boat_make.name %></td>
+    <td><%= boat_make.boat_type_id %></td>
+    <td><%= link_to 'Show', boat_make %></td>
+    <td><%= link_to 'Edit', edit_boat_make_path(boat_make) %></td>
+    <td><%= link_to 'Destroy', boat_make, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat make', new_boat_make_path %>

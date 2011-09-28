@@ -1,0 +1,23 @@
+<h1>Listing car_weights</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_weights.each do |car_weight| %>
+  <tr>
+    <td><%= car_weight.name %></td>
+    <td><%= link_to 'Show', car_weight %></td>
+    <td><%= link_to 'Edit', edit_car_weight_path(car_weight) %></td>
+    <td><%= link_to 'Destroy', car_weight, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car weight', new_car_weight_path %>

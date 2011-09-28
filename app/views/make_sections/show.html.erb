@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @make_section.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @make_section.type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_make_section_path(@make_section) %> |
+<%= link_to 'Back', make_sections_path %>

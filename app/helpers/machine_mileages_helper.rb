@@ -1,0 +1,2 @@
+module MachineMileagesHelper
+end

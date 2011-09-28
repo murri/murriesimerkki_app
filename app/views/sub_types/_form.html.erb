@@ -1,0 +1,25 @@
+<%= form_for(@sub_type) do |f| %>
+  <% if @sub_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sub_type.errors.count, "error") %> prohibited this sub_type from being saved:</h2>
+
+      <ul>
+      <% @sub_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%=  collection_select(:sub_type, :type_id, Type.all, :id, :name , options ={:prompt => ""} ) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

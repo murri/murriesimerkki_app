@@ -1,0 +1,23 @@
+<h1>Listing car_mileages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_mileages.each do |car_mileage| %>
+  <tr>
+    <td><%= car_mileage.name %></td>
+    <td><%= link_to 'Show', car_mileage %></td>
+    <td><%= link_to 'Edit', edit_car_mileage_path(car_mileage) %></td>
+    <td><%= link_to 'Destroy', car_mileage, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car mileage', new_car_mileage_path %>

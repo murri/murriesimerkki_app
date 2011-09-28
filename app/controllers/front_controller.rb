@@ -1,3 +1,3 @@
-def contact
-#doesn't really have to do anything.
+def send_mail
+    Emailer::deliver_contact_email(params[:email])
 end

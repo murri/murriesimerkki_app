@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @caravan_model_section.name %>
+</p>
+
+<p>
+  <b>Caravan make section:</b>
+  <%= @caravan_model_section.caravan_make_section_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_caravan_model_section_path(@caravan_model_section) %> |
+<%= link_to 'Back', caravan_model_sections_path %>

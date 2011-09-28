@@ -1,0 +1,25 @@
+<h1>Listing caravans</h1>
+
+<table>
+  <tr>
+    <th>Industry</th>
+    <th>Focusing section</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravans.each do |caravan| %>
+  <tr>
+    <td><%= caravan.industry_id %></td>
+    <td><%= caravan.focusing_section_id %></td>
+    <td><%= link_to 'Show', caravan %></td>
+    <td><%= link_to 'Edit', edit_caravan_path(caravan) %></td>
+    <td><%= link_to 'Destroy', caravan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan', new_caravan_path %>

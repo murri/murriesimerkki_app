@@ -1,0 +1,23 @@
+<h1>Listing machine_prices</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @machine_prices.each do |machine_price| %>
+  <tr>
+    <td><%= machine_price.name %></td>
+    <td><%= link_to 'Show', machine_price %></td>
+    <td><%= link_to 'Edit', edit_machine_price_path(machine_price) %></td>
+    <td><%= link_to 'Destroy', machine_price, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Machine price', new_machine_price_path %>

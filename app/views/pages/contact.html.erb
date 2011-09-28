@@ -1,6 +1,30 @@
-<h1>Contact</h1>
-<p>
-  Contact Ruby on Rails Tutorial about the sample app at the
-  <a href="http://railstutorial.org/feedback">feedback page</a>.
-</p>
+<h1>Tiedot</h1>
+<h1>___________________________________________</h1>
+
+<p>Nimi</p>
+ <form name="myform" action="http://www.mydomain.com/myformhandler.cgi" method="POST">
+<div align="left">
+
+<input type="text" size="25" value="Oma nimi!">
+
+</div>
+</form>
+<p><%= @email_name %></p>
+ 
+<p>Viesti</p>
+<form name="myform" action="http://www.mydomain.com/myformhandler.cgi" method="POST">
+<div align="left">
+<input type="text" size="25" value="Sähköpostiosoitteesi!">
+
+</div>
+</form> 
+
+<p><%= @email_body %></p>
+<form method="post" action="mailto:youremail@email.com">
+<textarea rows="5" cols="20" wrap="physical" name="comments">
+Lisätiedot
+</textarea>
+<%= submit_tag "Lähetä "%>
+
+</form>
 

@@ -1,0 +1,39 @@
+<h1>30 viimeisintä</h1>
+
+<table>
+  <tr>
+    <th>Merkki</th>
+    <th>Malli</th>
+    <th></th>
+    <th>Vuosimalli</th>
+    <th>Hinta</th>
+    <th>Mittarilukema</th>
+    <th>Myyjä</th>
+    <th>Puhelin</th>
+    <th>Paikkakunta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_posts.each do |caravan_post| %>
+  <tr>
+    <td><%= caravan_post.caravan_make_section_id %></td>
+    <td><%= caravan_post.caravan_model_section_id %></td>
+    <td><%= caravan_post.caravan_cover_image_uid %></td>
+    <td><%= caravan_post.caravan_year_model %></td>
+    <td><%= caravan_post.caravan_asking_price %></td>
+    <td><%= caravan_post.caravan_mileage %></td>
+    <td><%= caravan_post.caravan_user_name %></td>
+    <td><%= caravan_post.caravan_user_phone %></td>
+    <td><%= caravan_post.caravan_town_type_id %></td>
+    <td><%= link_to 'Show', caravan_post %></td>
+    <td><%= link_to 'Edit', edit_caravan_post_path(caravan_post) %></td>
+    <td><%= link_to 'Destroy', caravan_post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Jätä ilmoitus', new_caravan_post_path %>

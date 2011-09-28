@@ -1,0 +1,53 @@
+http://www.falsepositives.com/index.php/2011/01/18/a-preamble-to-building-a-cascading-drop-down-selection-list-for-ruby-on-rails-with-jquery-ajax/
+http://www.falsepositives.com/index.php/2010/05/28/building-a-casscading-drop-down-selection-list-for-ruby-on-rails-with-jquery-ajax/
+
+Lataa JQuery käyttöön 
+
+app/views/layouts/application.html.erb
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js" %>
+
+generoi Sections ja SubSections controllerit/modelit scaffoldilla 
+(nämä ovat siis tätä esimerkkiä varten, foorumien tapauksessa olvat tietenkin esim. Cities -> Cars tms.)
+$ rails generate scaffold Machine_Type name:string
+$ rails generate scaffold Machine_Category_Sections name:string machine_type_id:integer
+$ 
+$rails generate scaffold Machine_Make_Sections name:string 
+
+
+$ rails generate scaffold Machine_cover_image_uid name:string
+$ rails generate scaffold Machine_cover_image_name name:string
+
+
+
+$ rails generate scaffold Machine_Engine_Size name:string
+$ rails generate scaffold Machine_Color name:string
+$ rails generate scaffold Machine_Color_Type name:string Machine_color_id:integer
+$ rails generate scaffold Machine_Fuel_Type name:string
+$ rails generate scaffold Machine_Drive_Type name:string
+
+
+
+
+
+$ rails generate scaffold Machine_Domicile_Type name:string
+$ rails generate scaffold Machine_Town_Type name:string machine_domicile_type_id:integer
+
+
+
+luo vastaavat taulut tietokantaan
+$ rake db:migrate
+
+luodaan Gallery controlleri, jossa noi näytetään
+$ rails generate scaffold MachinePost machine_type_id:integer machine_category_section_id:integer machine_make_section_id:integer machine_model:string machine_cover_image_uid:string machine_cover_image_name:string machine_engine_model:string machine_price:string  machine_gross_weight:string machine_year_model:date machine_engine_size_id:string machine_mileage:string machine_color_id:string machine_color_type_id:string machine_fuel_type_id:string machine_drive_type_id:string machine_information:text machine_total_owner:string machine_user_name:string machine_user_phone:string machine_user_email:string machine_domicile_type_id:integer machine_town_type_id:integer
+$ rake db:migrate
+
+
+sitten postin mukaan muutokset kontrollereihin ja vieweihin, kuten tässä aplikaatiossa on tehty.
+
+sit viimeisenä pitää vielä lisätä config/routes.rb 
+match '/sub_sections/for_sectionid/:id' => 'sub_sections#for_sectionid'
+
+tämä johtuu siitä, että sub_sections on REST-controlleri, eli oletuksena on vaan noi 
+(valmiiksi scaffoldilla generoituvat) index, show, new,edit, create, create, update, destroy actionit. Jos (kun)
+haluaa käyttää muita, pitää erikseen mainita kyseiset reitit. Yleensä jos tekee mieli tehdä monta omaa, pitäisi ehkä
+miettiä, pitäisikö mieluummin tehdä uusi kontrolleri jollekkin resurssille. 

@@ -1,0 +1,2 @@
+module CarPricesHelper
+end

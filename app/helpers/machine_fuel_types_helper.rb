@@ -1,0 +1,2 @@
+module MachineFuelTypesHelper
+end

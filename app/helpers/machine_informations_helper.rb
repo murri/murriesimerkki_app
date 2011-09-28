@@ -1,0 +1,2 @@
+module MachineInformationsHelper
+end

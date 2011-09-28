@@ -1,0 +1,23 @@
+<h1>Listing moto_engine_sizes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_engine_sizes.each do |moto_engine_size| %>
+  <tr>
+    <td><%= moto_engine_size.name %></td>
+    <td><%= link_to 'Show', moto_engine_size %></td>
+    <td><%= link_to 'Edit', edit_moto_engine_size_path(moto_engine_size) %></td>
+    <td><%= link_to 'Destroy', moto_engine_size, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto engine size', new_moto_engine_size_path %>

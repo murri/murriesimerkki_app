@@ -1,0 +1,25 @@
+<%= form_for(@model_section) do |f| %>
+  <% if @model_section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@model_section.errors.count, "error") %> prohibited this model_section from being saved:</h2>
+
+      <ul>
+      <% @model_section.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :make_id %><br />
+    <%=  collection_select(:model_section, :make_section_id, MakeSection.all, :id, :name , options ={:prompt => ""} ) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

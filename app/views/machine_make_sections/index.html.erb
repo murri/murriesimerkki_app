@@ -1,0 +1,23 @@
+<h1>Listing machine_make_sections</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @machine_make_sections.each do |machine_make_section| %>
+  <tr>
+    <td><%= machine_make_section.name %></td>
+    <td><%= link_to 'Show', machine_make_section %></td>
+    <td><%= link_to 'Edit', edit_machine_make_section_path(machine_make_section) %></td>
+    <td><%= link_to 'Destroy', machine_make_section, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Machine make section', new_machine_make_section_path %>

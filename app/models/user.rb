@@ -39,6 +39,17 @@ def self.authenticate(email, submitted_password)
     return user if user.has_password?(submitted_password)
   end
 
+def self.authenticate_with_salt(id, cookie_salt)
+    user = find_by_id(id)
+    (user && user.salt == cookie_salt) ? user : nil
+  end
+def self.search(search)
+  if search
+    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
   private
 
     def encrypt_password

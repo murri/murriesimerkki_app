@@ -1,0 +1,2 @@
+module CarDomicileTypesHelper
+end

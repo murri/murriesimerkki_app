@@ -1,0 +1,23 @@
+<h1>Listing engine_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @engine_types.each do |engine_type| %>
+  <tr>
+    <td><%= engine_type.name %></td>
+    <td><%= link_to 'Show', engine_type %></td>
+    <td><%= link_to 'Edit', edit_engine_type_path(engine_type) %></td>
+    <td><%= link_to 'Destroy', engine_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Engine type', new_engine_type_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@machine_town_type_section) do |f| %>
+  <% if @machine_town_type_section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@machine_town_type_section.errors.count, "error") %> prohibited this machine_town_type_section from being saved:</h2>
+
+      <ul>
+      <% @machine_town_type_section.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Machine_Domicile_type_id %><br />
+    <%= f.text_field :Machine_Domicile_type_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

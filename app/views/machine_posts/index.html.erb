@@ -1,0 +1,54 @@
+<h1>30 viimeisintä</h1>
+<!-- projects/index.rhtml -->
+<% form_tag machine_posts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+
+
+
+
+<% end %>
+
+
+
+<table>
+  <tr>
+    <th>Merkki</th>
+    <th></th>
+    <th>Malli</th>
+    <th>Hinta</th>
+    <th>Vuosimalli</th>
+    <th>Mittarilukema</th>
+    <th>Myyjä</th>
+    <th>Puhelin</th>
+    <th>Email</th>
+    <th>Paikkakunta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @machine_posts.each do |machine_post| %>
+  <tr>
+    <td><%= machine_post.machine_make_section.name %></td>
+    <td><%= machine_post.machine_cover_image_uid %></td>
+    <td><%= machine_post.machine_model %></td>
+    <td><%= machine_post.machine_price %></td>
+    <td><%= machine_post.machine_year_model %></td>
+    <td><%= machine_post.machine_mileage %></td>
+    <td><%= machine_post.machine_user_name %></td>
+    <td><%= machine_post.machine_user_phone %></td>
+    <td><%= machine_post.machine_user_email %></td>
+    <td><%= machine_post.machine_town_type.name %></td>
+    <td><%= link_to 'Show', machine_post %></td>
+    <td><%= link_to 'Edit', edit_machine_post_path(machine_post) %></td>
+    <td><%= link_to 'Destroy', machine_post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Jätä ilmoitus', new_machine_post_path %>

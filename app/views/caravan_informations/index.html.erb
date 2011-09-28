@@ -1,0 +1,23 @@
+<h1>Listing caravan_informations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_informations.each do |caravan_information| %>
+  <tr>
+    <td><%= caravan_information.name %></td>
+    <td><%= link_to 'Show', caravan_information %></td>
+    <td><%= link_to 'Edit', edit_caravan_information_path(caravan_information) %></td>
+    <td><%= link_to 'Destroy', caravan_information, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan information', new_caravan_information_path %>

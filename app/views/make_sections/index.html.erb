@@ -1,0 +1,25 @@
+<h1>Listing make_sections</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @make_sections.each do |make_section| %>
+  <tr>
+    <td><%= make_section.name %></td>
+    <td><%= make_section.type_id %></td>
+    <td><%= link_to 'Show', make_section %></td>
+    <td><%= link_to 'Edit', edit_make_section_path(make_section) %></td>
+    <td><%= link_to 'Destroy', make_section, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Make section', new_make_section_path %>

@@ -1,0 +1,2 @@
+module BoatYearModelsHelper
+end

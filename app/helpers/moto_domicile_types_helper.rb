@@ -1,0 +1,2 @@
+module MotoDomicileTypesHelper
+end

@@ -1,0 +1,23 @@
+<h1>Listing boat_notes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_notes.each do |boat_note| %>
+  <tr>
+    <td><%= boat_note.name %></td>
+    <td><%= link_to 'Show', boat_note %></td>
+    <td><%= link_to 'Edit', edit_boat_note_path(boat_note) %></td>
+    <td><%= link_to 'Destroy', boat_note, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat note', new_boat_note_path %>

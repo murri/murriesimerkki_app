@@ -1,0 +1,23 @@
+<h1>Listing car_color_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_color_types.each do |car_color_type| %>
+  <tr>
+    <td><%= car_color_type.name %></td>
+    <td><%= link_to 'Show', car_color_type %></td>
+    <td><%= link_to 'Edit', edit_car_color_type_path(car_color_type) %></td>
+    <td><%= link_to 'Destroy', car_color_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car color type', new_car_color_type_path %>

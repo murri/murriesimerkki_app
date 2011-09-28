@@ -1,0 +1,140 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Car type:</b>
+  <%= @car_post.car_type.name %>
+</p>
+
+<p>
+  <b>Car make section:</b>
+  <%= @car_post.car_make_section.name %>
+</p>
+
+<p>
+  <b>Car model section:</b>
+  <%= @car_post.car_model_section.name %>
+</p>
+
+<p>
+  <b>Car cover image uid:</b>
+  <%= @car_post.car_cover_image_uid %>
+</p>
+
+<p>
+  <b>Car cover image name:</b>
+  <%= @car_post.car_cover_image_name %>
+</p>
+
+<p>
+  <b>Car sub type:</b>
+  <%= @car_post.car_sub_type.name %>
+</p>
+
+<p>
+  <b>Car year model:</b>
+  <%= @car_post.car_year_model %>
+</p>
+
+<p>
+  <b>Car color:</b>
+  <%= @car_post.car_color.name %>
+</p>
+
+<p>
+  <b>Car color type:</b>
+  <%= @car_post.car_color_type_id %>
+</p>
+
+<p>
+  <b>Car price:</b>
+  <%= @car_post.car_price %>
+</p>
+
+<p>
+  <b>Car information:</b>
+  <%= @car_post.car_information %>
+</p>
+
+<p>
+  <b>Car total owner:</b>
+  <%= @car_post.car_total_owner %>
+</p>
+
+<p>
+  <b>Car mileage:</b>
+  <%= @car_post.car_mileage %>
+</p>
+
+<p>
+  <b>Car engine size:</b>
+  <%= @car_post.car_engine_size.name%>
+</p>
+
+<p>
+  <b>Car drive type:</b>
+  <%= @car_post.car_drive_type.name %>
+</p>
+
+<p>
+  <b>Car fuel type:</b>
+  <%= @car_post.car_fuel_type.name %>
+</p>
+
+<p>
+  <b>Car gearbox type:</b>
+  <%= @car_post.car_gearbox_type.name %>
+</p>
+
+<p>
+  <b>Car power:</b>
+  <%= @car_post.car_power %>
+</p>
+
+<p>
+  <b>Car emission:</b>
+  <%= @car_post.car_emission %>
+</p>
+
+<p>
+  <b>Car top speed:</b>
+  <%= @car_post.car_top_speed %>
+</p>
+
+<p>
+  <b>Car acceleration:</b>
+  <%= @car_post.car_acceleration %>
+</p>
+
+<p>
+  <b>Car weight:</b>
+  <%= @car_post.car_weight %>
+</p>
+
+<p>
+  <b>Car user name:</b>
+  <%= @car_post.car_user_name %>
+</p>
+
+<p>
+  <b>Car user phone:</b>
+  <%= @car_post.car_user_phone %>
+</p>
+
+<p>
+  <b>Car user email:</b>
+  <%= @car_post.car_user_email %>
+</p>
+
+<p>
+  <b>Car domicile type:</b>
+  <%= @car_post.car_domicile_type.name %>
+</p>
+
+<p>
+  <b>Car town type:</b>
+  <%= @car_post.car_town_type.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_car_post_path(@car_post) %> |
+<%= link_to 'Back', car_posts_path %>

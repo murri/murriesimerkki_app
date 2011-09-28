@@ -1,0 +1,2 @@
+module CoverImageNamesHelper
+end

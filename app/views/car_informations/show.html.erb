@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @car_information.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_car_information_path(@car_information) %> |
+<%= link_to 'Back', car_informations_path %>

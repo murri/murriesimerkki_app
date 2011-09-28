@@ -1,0 +1,2 @@
+module MotoMileagesHelper
+end

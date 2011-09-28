@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @machine_color_type.name %>
+</p>
+
+<p>
+  <b>Machine color:</b>
+  <%= @machine_color_type.Machine_color_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_machine_color_type_path(@machine_color_type) %> |
+<%= link_to 'Back', machine_color_types_path %>

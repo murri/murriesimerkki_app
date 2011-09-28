@@ -1,0 +1,23 @@
+<h1>Listing storage_equipments</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @storage_equipments.each do |storage_equipment| %>
+  <tr>
+    <td><%= storage_equipment.name %></td>
+    <td><%= link_to 'Show', storage_equipment %></td>
+    <td><%= link_to 'Edit', edit_storage_equipment_path(storage_equipment) %></td>
+    <td><%= link_to 'Destroy', storage_equipment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Storage equipment', new_storage_equipment_path %>

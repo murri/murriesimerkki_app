@@ -1,0 +1,23 @@
+<h1>Listing car_emissions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_emissions.each do |car_emission| %>
+  <tr>
+    <td><%= car_emission.name %></td>
+    <td><%= link_to 'Show', car_emission %></td>
+    <td><%= link_to 'Edit', edit_car_emission_path(car_emission) %></td>
+    <td><%= link_to 'Destroy', car_emission, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car emission', new_car_emission_path %>

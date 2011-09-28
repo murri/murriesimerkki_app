@@ -1,0 +1,2 @@
+module MotoInformationsHelper
+end

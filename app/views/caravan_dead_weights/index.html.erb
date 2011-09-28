@@ -1,0 +1,23 @@
+<h1>Listing caravan_dead_weights</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_dead_weights.each do |caravan_dead_weight| %>
+  <tr>
+    <td><%= caravan_dead_weight.name %></td>
+    <td><%= link_to 'Show', caravan_dead_weight %></td>
+    <td><%= link_to 'Edit', edit_caravan_dead_weight_path(caravan_dead_weight) %></td>
+    <td><%= link_to 'Destroy', caravan_dead_weight, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan dead weight', new_caravan_dead_weight_path %>

@@ -1,0 +1,23 @@
+<h1>Listing moto_domicile_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_domicile_types.each do |moto_domicile_type| %>
+  <tr>
+    <td><%= moto_domicile_type.name %></td>
+    <td><%= link_to 'Show', moto_domicile_type %></td>
+    <td><%= link_to 'Edit', edit_moto_domicile_type_path(moto_domicile_type) %></td>
+    <td><%= link_to 'Destroy', moto_domicile_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto domicile type', new_moto_domicile_type_path %>

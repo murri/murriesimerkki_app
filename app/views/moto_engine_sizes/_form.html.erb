@@ -1,0 +1,21 @@
+<%= form_for(@moto_engine_size) do |f| %>
+  <% if @moto_engine_size.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@moto_engine_size.errors.count, "error") %> prohibited this moto_engine_size from being saved:</h2>
+
+      <ul>
+      <% @moto_engine_size.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

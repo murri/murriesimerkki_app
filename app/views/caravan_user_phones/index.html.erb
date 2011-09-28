@@ -1,0 +1,23 @@
+<h1>Listing caravan_user_phones</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_user_phones.each do |caravan_user_phone| %>
+  <tr>
+    <td><%= caravan_user_phone.name %></td>
+    <td><%= link_to 'Show', caravan_user_phone %></td>
+    <td><%= link_to 'Edit', edit_caravan_user_phone_path(caravan_user_phone) %></td>
+    <td><%= link_to 'Destroy', caravan_user_phone, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan user phone', new_caravan_user_phone_path %>

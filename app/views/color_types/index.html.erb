@@ -1,0 +1,23 @@
+<h1>Listing color_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @color_types.each do |color_type| %>
+  <tr>
+    <td><%= color_type.name %></td>
+    <td><%= link_to 'Show', color_type %></td>
+    <td><%= link_to 'Edit', edit_color_type_path(color_type) %></td>
+    <td><%= link_to 'Destroy', color_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Color type', new_color_type_path %>

@@ -1,0 +1,2 @@
+module MotoDriveTypesHelper
+end

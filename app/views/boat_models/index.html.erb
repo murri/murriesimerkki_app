@@ -1,0 +1,23 @@
+<h1>Listing boat_models</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_models.each do |boat_model| %>
+  <tr>
+    <td><%= boat_model.name %></td>
+    <td><%= link_to 'Show', boat_model %></td>
+    <td><%= link_to 'Edit', edit_boat_model_path(boat_model) %></td>
+    <td><%= link_to 'Destroy', boat_model, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat model', new_boat_model_path %>

@@ -1,0 +1,23 @@
+<h1>Listing asking_prices</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @asking_prices.each do |asking_price| %>
+  <tr>
+    <td><%= asking_price.name %></td>
+    <td><%= link_to 'Show', asking_price %></td>
+    <td><%= link_to 'Edit', edit_asking_price_path(asking_price) %></td>
+    <td><%= link_to 'Destroy', asking_price, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Asking price', new_asking_price_path %>

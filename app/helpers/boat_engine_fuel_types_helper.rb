@@ -1,0 +1,2 @@
+module BoatEngineFuelTypesHelper
+end

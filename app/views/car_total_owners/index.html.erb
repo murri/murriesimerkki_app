@@ -1,0 +1,23 @@
+<h1>Listing car_total_owners</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_total_owners.each do |car_total_owner| %>
+  <tr>
+    <td><%= car_total_owner.name %></td>
+    <td><%= link_to 'Show', car_total_owner %></td>
+    <td><%= link_to 'Edit', edit_car_total_owner_path(car_total_owner) %></td>
+    <td><%= link_to 'Destroy', car_total_owner, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car total owner', new_car_total_owner_path %>

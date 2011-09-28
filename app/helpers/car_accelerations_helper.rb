@@ -1,0 +1,2 @@
+module CarAccelerationsHelper
+end

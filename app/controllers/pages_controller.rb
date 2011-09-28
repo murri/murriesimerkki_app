@@ -4,5 +4,16 @@ class PagesController < ApplicationController
 
   def post
   end
+  def dogs
+end
+def ad
+end
+  def images
+end
+def index
+  @projects = Project.search(params[:search])
+end
+
+
 
 end

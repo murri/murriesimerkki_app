@@ -1,0 +1,2 @@
+module MachineColorTypesHelper
+end

@@ -1,0 +1,100 @@
+<%= form_for(@caravan_post) do |f| %>
+  <% if @caravan_post.errors.any? %>
+    <div id="error_explanation">
+<% form_for @caravan_post, :html => {:multipart => true} do |f| %>
+<% end %>
+
+      <h2><%= pluralize(@caravan_post.errors.count, "error") %> prohibited this caravan_post from being saved:</h2>
+
+      <ul>
+      <% @caravan_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div style="overflow:auto; height:800px;width:650px;">
+
+  <p>
+    <%= f.label :Tyyppi %><br />
+   <%=  collection_select(:caravan_post, :caravan_type_id, CaravanType.all, :id, :name , options ={:prompt => "Valitse tyyppi"} ) %>
+    </p>
+  <p>
+    <%= f.label :Merkki %><br />
+   <%= collection_select(:caravan_post, :caravan_make_section_id, CaravanMakeSection.find_all_by_caravan_type_id(@caravan_post.caravan_type_id), :id, :name, options ={:prompt => "Valitse merkki"}) %>
+  </p>
+  <p>
+    <%= f.label :Malli %><br />
+   <%=  collection_select(:caravan_post, :caravan_model_section_id, CaravanModelSection.all, :id, :name , options ={:prompt => "Valitse malli"} ) %>
+    </p>
+  <div class="field">
+    <%= f.label :Kuva %><br />
+    <%= f.file_field :caravan_cover_image_uid %>
+  </div>
+<%= image_tag @caravan_post.caravan_cover_image.thumb('100x100').url if @caravan_post.caravan_cover_image_uid %>
+
+  <div class="field">
+    <%= f.label :Kuvan_nimi %><br />
+    <%= f.text_field :caravan_cover_image_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Vuosimalli %><br />
+    <%= f.date_select :caravan_year_model %>
+  </div>
+  <div class="field">
+    <%= f.label :Hinta%><br />
+    <%= f.text_field :caravan_asking_price %>
+  </div>
+  <div class="field">
+    <%= f.label :Omistajien_maara %><br />
+    <%= f.text_field :caravan_total_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :Pituus%><br />
+    <%= f.text_field :caravan_length %>
+  </div>
+  <div class="field">
+    <%= f.label :Omamassa %><br />
+    <%= f.text_field :caravan_dead_weight %>
+  </div>
+  <div class="field">
+    <%= f.label :Kokonaismassa %><br />
+    <%= f.text_field :caravan_gross_weigt %>
+  </div>
+  <div class="field">
+    <%= f.label :Lisatiedot %><br />
+    <%= f.text_area :caravan_information %>
+  </div>
+  <div class="field">
+    <%= f.label :Mittarilukema %><br />
+    <%= f.text_field :caravan_mileage %>
+  </div>
+<H2>
+Omat tiedot
+</h2> 
+<h1>___________________________________________</h1>
+
+  <div class="field">
+    <%= f.label :Nimi %><br />
+    <%= f.text_field :caravan_user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Puhelin %><br />
+    <%= f.text_field :caravan_user_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %><br />
+    <%= f.text_field :caravan_user_email %>
+  </div>
+  <div class="field">
+    <%= f.label :Maakunta %><br />
+   <%=  collection_select(:caravan_post, :caravan_domicile_type_id, CaravanDomicileType.all, :id, :name , options ={:prompt => "Valitse maakunta"} ) %>
+  </div>
+ <p>
+    <%= f.label :Paikkakunta %><br />
+   <%= collection_select(:caravan_post, :caravan_town_type_id, CaravanTownType.find_all_by_caravan_domicile_type_id(@caravan_post.caravan_domicile_type_id), :id, :name, options ={:prompt => "Valitse paikkakunta"}) %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

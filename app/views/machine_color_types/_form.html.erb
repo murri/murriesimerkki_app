@@ -1,0 +1,25 @@
+<%= form_for(@machine_color_type) do |f| %>
+  <% if @machine_color_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@machine_color_type.errors.count, "error") %> prohibited this machine_color_type from being saved:</h2>
+
+      <ul>
+      <% @machine_color_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Machine_color_id %><br />
+    <%= f.text_field :Machine_color_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

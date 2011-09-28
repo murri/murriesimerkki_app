@@ -1,0 +1,2 @@
+module BodyMaterialsHelper
+end

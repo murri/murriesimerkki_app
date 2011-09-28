@@ -1,0 +1,23 @@
+<h1>Listing boat_heights</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_heights.each do |boat_height| %>
+  <tr>
+    <td><%= boat_height.name %></td>
+    <td><%= link_to 'Show', boat_height %></td>
+    <td><%= link_to 'Edit', edit_boat_height_path(boat_height) %></td>
+    <td><%= link_to 'Destroy', boat_height, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat height', new_boat_height_path %>

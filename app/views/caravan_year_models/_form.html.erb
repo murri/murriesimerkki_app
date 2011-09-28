@@ -1,0 +1,21 @@
+<%= form_for(@caravan_year_model) do |f| %>
+  <% if @caravan_year_model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@caravan_year_model.errors.count, "error") %> prohibited this caravan_year_model from being saved:</h2>
+
+      <ul>
+      <% @caravan_year_model.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.date_select :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

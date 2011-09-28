@@ -1,5 +1,7 @@
 .container {
   width: 710px;
+
+
 }
 
 body {
@@ -7,13 +9,11 @@ body {
 }
 
 header {
-  padding-top: 20px;
+  padding-top: 35px;
 }
 
 header img {
-  padding: 1em;
-  background: #A3D5E4;
-}
+    }
 
 section {
   margin-top: 1em;
@@ -45,7 +45,7 @@ a:visited {
 /* Navigation */
 
 nav {
-  float: right;
+  float: center;
 }
 
 nav {
@@ -101,7 +101,8 @@ footer nav {
 
 table.profile {
   width: 100%;
-  margin-bottom: 1;
+  margin-bottom: 0;
+  height:float;
 }
 
 td.main {
@@ -163,4 +164,34 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+ul.users {
+  margin-top: 1em;
+}
 
+.users li {
+  list-style: none;
+}
+.leftColFront {
+  width: 860px;
+  text-align: justify;
+  float: left;
+}
+
+.rightColFront {
+  width: 140px;
+  float: right;
+}
+
+.scroll-track{
+ height:10px;
+ width:10px;
+ background:black;
+}
+
+.scroll-handle{
+ border: 1px solid black;
+ height:10px;
+ width:10px;
+ background:#5B207B;
+ cursor:pointer;
+}

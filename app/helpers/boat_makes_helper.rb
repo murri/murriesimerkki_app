@@ -1,0 +1,2 @@
+module BoatMakesHelper
+end

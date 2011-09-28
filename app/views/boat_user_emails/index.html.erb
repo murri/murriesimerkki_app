@@ -1,0 +1,23 @@
+<h1>Listing boat_user_emails</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @boat_user_emails.each do |boat_user_email| %>
+  <tr>
+    <td><%= boat_user_email.name %></td>
+    <td><%= link_to 'Show', boat_user_email %></td>
+    <td><%= link_to 'Edit', edit_boat_user_email_path(boat_user_email) %></td>
+    <td><%= link_to 'Destroy', boat_user_email, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Boat user email', new_boat_user_email_path %>

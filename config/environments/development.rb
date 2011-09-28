@@ -22,5 +22,22 @@ EsimerkkiApp::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :address        => 'smtp.example.com',
+  :port           => 25,
+  :domain         => 'www.example.com',
+  :authentication => :login,
+  :user_name      => 'www',
+  :password       => 'secret'
+}
+## -- Dragonfly --
+  config.middleware.insert_before 'Dragonfly::Middleware', 'Rack::Cache', {
+    :verbose     => true,
+    :metastore   => "file:#{Rails.root}/tmp/dragonfly/cache/meta",
+    :entitystore => "file:#{Rails.root}/tmp/dragonfly/cache/body"
+  }
 end
 

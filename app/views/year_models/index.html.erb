@@ -1,0 +1,23 @@
+<h1>Listing year_models</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @year_models.each do |year_model| %>
+  <tr>
+    <td><%= year_model.name %></td>
+    <td><%= link_to 'Show', year_model %></td>
+    <td><%= link_to 'Edit', edit_year_model_path(year_model) %></td>
+    <td><%= link_to 'Destroy', year_model, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Year model', new_year_model_path %>

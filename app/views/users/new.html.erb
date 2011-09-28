@@ -1,26 +1,37 @@
-<h1 align="center">Register</h1>
+<h1 align="left">Rekisteröinti</h1>
 
 <%= form_for(@user) do |f| %>
- <%= render 'shared/error_messages' %>
+ <%= render 'shared/error_messages', :object => f.object %>
 
-  <div  align="center"class="field">
-    <%= f.label :name %><br />
+  <div  align="left"class="field">
+    <%= f.label :Nimi %><br />
     <%= f.text_field :name %>
   </div>
-  <div  align="center"class="field">
-    <%= f.label :email %><br />
+  <div  align="left"class="field">
+    <%= f.label :"Sähköposti" %><br />
     <%= f.text_field :email %>
   </div>
-  <div  align="center"class="field">
-    <%= f.label :password %><br />
+  <div  align="left"class="field">
+    <%= f.label :Salasana %><br />
     <%= f.password_field :password %>
   </div>
-  <div  align="center"class="field">
-    <%= f.label :password_confirmation, "Confirmation" %><br />
+  <div  align="left"class="field">
+    <%= f.label :password_confirmation, "Salasanan vahvistus" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <div  align="center" align="center"class="actions">
-    <%= f.submit "Sign up" %>
+
+ <div class="field">
+       <div class="form_row">
+   <% [ 'Olen lukenut  Ajoneuvot-forumin käyttöehdot'].each do |theme| %>
+    <br><%= radio_button_tag 'theme', theme, @theme == theme %>
+    <%= label_tag "theme_#{theme}", theme.humanize %>
+  <% end %>
+</div>
+<br>
+</br>
+
+  <div  align="left" align="center"class="actions">
+    <%= f.submit "Tallenna" %>
   </div>
 <% end %>
 

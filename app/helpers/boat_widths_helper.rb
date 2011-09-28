@@ -1,0 +1,2 @@
+module BoatWidthsHelper
+end

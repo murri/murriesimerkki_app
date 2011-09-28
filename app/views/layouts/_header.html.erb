@@ -1,16 +1,176 @@
+
+
+<div class="bannerContainer banner1">
+    <script type="text/javascript">
+    var uri = 'http://impfi.tradedoubler.com/imp?type(js)pool(398230)a(1826396)' + new String (Math.random()).substring (2, 11);
+    document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
+    </script>
+  </div>
+<script type="text/javascript">
+
+/***********************************************
+* Scrollable Menu Links- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+* This notice must stay intact for legal use
+***********************************************/
+
+//configure path for left and right arrows
+var goleftimage='pointer2.gif'
+var gorightimage='pointer.gif'
+//configure menu width (in px):
+var menuwidth=250
+//configure menu height (in px):
+var menuheight=15
+//Specify scroll buttons directions ("normal" or "reverse"):
+var scrolldir="normal"
+//configure scroll speed (1-10), where larger is faster
+var scrollspeed=6
+//specify menu content
+var menucontents='<nobr><a href="http://localhost:3000/car_posts">Auto</a> | <a href="http://localhost:3000/moto_posts">Moto</a> | <a href="http://localhost:3000/caravan_posts">Karavaani</a> | <a href="http://localhost:3000/machine_posts">Kone</a> | <a href="http://localhost:3000/boat_posts">Vene</a></nobr>'
+
+
+////NO NEED TO EDIT BELOW THIS LINE////////////
+
+var iedom=document.all||document.getElementById
+var leftdircode='onMouseover="moveleft()" onMouseout="clearTimeout(lefttime)"'
+var rightdircode='onMouseover="moveright()" onMouseout="clearTimeout(righttime)"'
+if (scrolldir=="reverse"){
+var tempswap=leftdircode
+leftdircode=rightdircode
+rightdircode=tempswap
+}
+if (iedom)
+document.write('<span id="temp" style="visibility:hidden;position:absolute;top:-100;left:-5000">'+menucontents+'</span>')
+var actualwidth=''
+var cross_scroll, ns_scroll
+var loadedyes=0
+function fillup(){
+if (iedom){
+cross_scroll=document.getElementById? document.getElementById("test2") : document.all.test2
+cross_scroll.innerHTML=menucontents
+actualwidth=document.all? cross_scroll.offsetWidth : document.getElementById("temp").offsetWidth
+}
+else if (document.layers){
+ns_scroll=document.ns_scrollmenu.document.ns_scrollmenu2
+ns_scroll.document.write(menucontents)
+ns_scroll.document.close()
+actualwidth=ns_scroll.document.width
+}
+loadedyes=1
+}
+window.onload=fillup
+
+function moveleft(){
+if (loadedyes){
+if (iedom&&parseInt(cross_scroll.style.left)>(menuwidth-actualwidth)){
+cross_scroll.style.left=parseInt(cross_scroll.style.left)-scrollspeed+"px"
+}
+else if (document.layers&&ns_scroll.left>(menuwidth-actualwidth))
+ns_scroll.left-=scrollspeed
+}
+lefttime=setTimeout("moveleft()",50)
+}
+
+function moveright(){
+if (loadedyes){
+if (iedom&&parseInt(cross_scroll.style.left)<0)
+cross_scroll.style.left=parseInt(cross_scroll.style.left)+scrollspeed+"px"
+else if (document.layers&&ns_scroll.left<0)
+ns_scroll.left+=scrollspeed
+}
+righttime=setTimeout("moveright()",50)
+}
+
+
+if (iedom||document.layers){
+with (document){
+write('<table border="0" cellspacing="0" cellpadding="2">')
+write('<td valign="middle"><a href="#" '+leftdircode+'><img src="'+goleftimage+'"border=0></a> </td>')
+write('<td width="'+menuwidth+'px" valign="top">')
+if (iedom){
+write('<div style="position:relative;width:'+menuwidth+'px;height:'+menuheight+'px;overflow:hidden;">')
+write('<div id="test2" style="position:absolute;left:0;top:0">')
+write('</div></div>')
+}
+else if (document.layers){
+write('<ilayer width='+menuwidth+' height='+menuheight+' name="ns_scrollmenu">')
+write('<layer name="ns_scrollmenu2" left=0 top=0></layer></ilayer>')
+}
+write('</td>')
+write('<td valign="middle"> <a href="#" '+rightdircode+'>')
+write('<img src="'+gorightimage+'"border=0></a>')
+write('</td></table>')
+}
+}
+
+</script>
+ <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Etsi", :name => nil %>
+  </p>
+
 <header>
-  <% logo = image_tag("bmw.jpeg", :alt => "Sample App", :class => "round") %>
+
+
+
+   <nav class="round">
+   
+
+ <ul>
+
+
+
+      <li><%= link_to "Etusivu", root_path %></li>
+<% if signed_in? %>
+      <li><%= link_to "Profiili", current_user %></li>
+      <li><%= link_to "Asetukset", edit_user_path(current_user) %></li>
+     <li><%= link_to "Käyttäjät", users_path %></li>
+
+ <% end %>
+
+      <% if signed_in? %>
+<li><%= link_to 'Jätä ilmoitus', new_car_post_path %></li>
+ <li><%= link_to "Tarkka haku", search_path %></li>
+ <li><%= link_to "30 viimeisintä", car_posts_path %></li>
+
+
+
+
+<li><%= link_to "Kirjaudu ulos", signout_path, :method => :delete %></li>
+<td align = "center">
+<% logo = image_tag("finnish_flag.gif", :alt => "", :class => "round") %>
   <%= link_to logo, root_path %>
-  <nav class="round">
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Help", help_path %></li>
-      <li><%= link_to "Sign in", '#' %></li>
-          <li><%= link_to "Search", help_path %></li>
-<li><%= link_to "Sign up", signup_path,%></li>
+</td>
+<td align = "center">
+<% logo = image_tag("english_flag.png", :alt => "", :class => "round") %>
+  <%= link_to logo, root_path %>
+<br>
+</br>
+
+
+
+</td>
+
+
+<% else %>
+
+
+
+<li><%= link_to "Kirjaudu sisään", signin_path %></li>
+<li><%= link_to "Rekisteröidy", signup_path,%></li>
+
+
+
+<% end %>
 
 
     </ul>
   </nav>
+
+<br>
+</br>
+
+
 </header>
+
 

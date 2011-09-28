@@ -1,0 +1,23 @@
+<h1>Listing caravan_user_emails</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_user_emails.each do |caravan_user_email| %>
+  <tr>
+    <td><%= caravan_user_email.name %></td>
+    <td><%= link_to 'Show', caravan_user_email %></td>
+    <td><%= link_to 'Edit', edit_caravan_user_email_path(caravan_user_email) %></td>
+    <td><%= link_to 'Destroy', caravan_user_email, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan user email', new_caravan_user_email_path %>

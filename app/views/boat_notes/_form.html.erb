@@ -1,0 +1,21 @@
+<%= form_for(@boat_note) do |f| %>
+  <% if @boat_note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@boat_note.errors.count, "error") %> prohibited this boat_note from being saved:</h2>
+
+      <ul>
+      <% @boat_note.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_area :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

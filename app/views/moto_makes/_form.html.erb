@@ -1,0 +1,25 @@
+<%= form_for(@moto_make) do |f| %>
+  <% if @moto_make.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@moto_make.errors.count, "error") %> prohibited this moto_make from being saved:</h2>
+
+      <ul>
+      <% @moto_make.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_vehicle_id %><br />
+    <%= f.text_field :sub_vehicle_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

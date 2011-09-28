@@ -1,0 +1,2 @@
+module CoverImageUidsHelper
+end

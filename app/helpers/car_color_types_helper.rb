@@ -1,0 +1,2 @@
+module CarColorTypesHelper
+end

@@ -1,0 +1,2 @@
+module BoatTownTypeSectionsHelper
+end

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @caravan_town_type.name %>
+</p>
+
+<p>
+  <b>Caravan domicile type:</b>
+  <%= @caravan_town_type.caravan_domicile_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_caravan_town_type_path(@caravan_town_type) %> |
+<%= link_to 'Back', caravan_town_types_path %>

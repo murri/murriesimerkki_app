@@ -1,0 +1,2 @@
+module CaravanAskingPricesHelper
+end

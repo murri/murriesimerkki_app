@@ -1,0 +1,23 @@
+<h1>Listing moto_fuel_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_fuel_types.each do |moto_fuel_type| %>
+  <tr>
+    <td><%= moto_fuel_type.name %></td>
+    <td><%= link_to 'Show', moto_fuel_type %></td>
+    <td><%= link_to 'Edit', edit_moto_fuel_type_path(moto_fuel_type) %></td>
+    <td><%= link_to 'Destroy', moto_fuel_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto fuel type', new_moto_fuel_type_path %>

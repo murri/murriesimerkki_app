@@ -1,3 +1,7 @@
+<div style="overflow:auto; height: 500px; width:690px">
+<table cellpadding="0" cellspacing="0" style="width:1500px;">
+<tr>
+
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -10,19 +14,346 @@
       </ul>
     </div>
   <% end %>
+<!--[form:image]-->
+ 
+<p><label for="image_file">Add images</label><br/>
+<input type="file" name="image[file]" /></p>
+<!--[eoform:image]-->
 
   <div class="field">
-    <%= f.label :vehicle %><br />
-    <%= f.text_field :vehicle %>
+    <%= f.label :Category %><br />
+   <div class="form_row">
+   <% [ 'Cars and vans', 'Motorcycles', 'Boats', 'Motors', 'Caravan'].each do |theme| %>
+    <br><%= radio_button_tag 'theme', theme, @theme == theme %>
+    <%= label_tag "theme_#{theme}", theme.humanize %>
+  <% end %>
+</div>
   </div>
-  <div class="field">
-    <%= f.label :make %><br />
-    <%= f.text_field :make %>
-  </div>
-  <div class="field">
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
-  </div>
+<li id="categories-1" class="widget widget_categories"><h4 class="widgettitle">Vehicle type*</h4>
+<select name='car' id='car' class='postform' >
+
+	<option value='-1'>Select type</option>
+	<option class="level-0" value="4294">Car&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">Van&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">Minibus&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">Light truck&nbsp;&nbsp;(5)</option>
+
+</select>
+
+
+
+  <div>
+
+<li id="categories-1" class="widget widget_categories"><h4 class="widgettitle">Make*</h4>
+<select name='car' id='car' class='postform' >
+
+	<option value='-1'>Select make</option>
+	<option class="level-0" value="4294">Acadian&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">Adler&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">Aleko&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">Alfa Romeo&nbsp;&nbsp;(5)</option>
+
+	<option class="level-0" value="413677">AMC&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1930">Armstrong Siddeley&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="6652">Aston Martin&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="4872">Auburn&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="13505">Audi&nbsp;&nbsp;(3)</option>
+
+	<option class="level-0" value="1788">Austin&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">Bedford&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">Bentley&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">Bitter&nbsp;&nbsp;(1)</option>
+</select>
+
+
+</div>
+ <li id="categories-1" class="widget widget_categories"><h4 class="widgettitle">Model*</h4>
+<select name='car' id='car' class='postform' >
+
+	<option value='-1'>Select model</option>
+	<option class="level-0" value="4294">Acadian&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">Adler&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">Aleko&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">Alfa Romeo&nbsp;&nbsp;(5)</option>
+
+	<option class="level-0" value="413677">AMC&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1930">Armstrong Siddeley&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="6652">Aston Martin&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="4872">Auburn&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="13505">Audi&nbsp;&nbsp;(3)</option>
+
+	<option class="level-0" value="1788">Austin&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">Bedford&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">Bentley&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">Bitter&nbsp;&nbsp;(1)</option>
+</select>
+
+<li id="categories-1" class="widget widget_categories"><h4 class="widgettitle">Sub type</h4>
+<select name='car' id='car' class='postform' >
+
+	<option value='-1'>Select sub type</option>
+	<option class="level-0" value="4294">Sedan&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">Station Wagon&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">Hatchback&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">MPV&nbsp;&nbsp;(5)</option>
+
+	<option class="level-0" value="413677">Coupe&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1930">Convertible&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="6652">4X4&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="4872">Racing vehicle&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="13505">Other&nbsp;&nbsp;(3)</option>
+
+</select>
+ <li id="categories-1" class="widget widget_categories"><h4 class="widgettitle">Year model*</h4>
+<select name='car' id='car' class='postform' >
+
+	<option value='-1'>Select year model</option>
+	<option class="level-0" value="4294">2012&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">2011&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">2010&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">2009&nbsp;&nbsp;(5)</option>
+
+	<option class="level-0" value="413677">2008&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1930">2007&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="6652">2006&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="4872">2005&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="13505">2004&nbsp;&nbsp;(3)</option>
+
+	<option class="level-0" value="1788">2003&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">2002&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">2001&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">2000&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1999&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1998&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1997&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1996&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1788">1995&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1994&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1993&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1992&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1991&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1990&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1989&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1988&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1987&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1986&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1985&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1984&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1788">1983&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1982&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1981&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1980&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1979&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1978&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1977&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1976&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1975&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1974&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1973&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1972&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1788">1971&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1970&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1969&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1968&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1967&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1966&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1965&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1964&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1963&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1962&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1961&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1960&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1959&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1958&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1957&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1956&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1788">1955&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1954&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1953&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1952&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1951&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1950&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1949&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1948&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1947&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1946&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1945&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1944&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1943&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1942&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1941&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1940&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1939&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1938&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1937&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1936&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1788">1935&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1934&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1933&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1932&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1931&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1930&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1929&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1928&nbsp;&nbsp;(1)</option>
+
+<option class="level-0" value="1788">1927&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1926&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1925&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1924&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1788">1923&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1922&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1921&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1920&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1919&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1918&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1917&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1916&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1915&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1914&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1913&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1912&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1911&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1910&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1909&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1908&nbsp;&nbsp;(1)</option>
+
+	<option class="level-0" value="1788">1907&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1906&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1905&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="157083">1904&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1788">1903&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="255">1902&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1">1901&nbsp;&nbsp;(1)</option>
+
+</select>
+
+<li id="categories-1" class="widget widget_categories"><h4 class="widgettitle">First registration</h4>
+<select name='car' id='car' class='postform' >
+
+	<option value='-1'>Month</option>
+	<option class="level-0" value="4294">Yanuary&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">February&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">March&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">April&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">May&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">June&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">July&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">August&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="1104">September&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">October&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">November&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">December&nbsp;&nbsp;(3)</option>
+	
+</select>
+
+<li id="categories-1" class="widget widget_categories"><h4 class="widgettitle"></h4>
+<select name='car' id='car' class='postform' >
+
+	<option value='-1'>Year</option>
+	<option class="level-0" value="4294">2012&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">2011&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">2010&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">2009&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">2008&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">2007&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">2006&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">2005&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="1104">2004&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">2003&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">2002&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">2001&nbsp;&nbsp;(3)</option>
+
+	<option class="level-0" value="4294">2000&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1999&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">1998&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1997&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">1996&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1995&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">1994&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1993&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="1104">1992&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1991&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">1990&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1989&nbsp;&nbsp;(3)</option>
+
+	<option class="level-0" value="4294">1988&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1987&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">1986&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1985&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">1984&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1983&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">1982&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1981&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="1104">1980&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1979&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">1978&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1977&nbsp;&nbsp;(3)</option>
+
+	<option class="level-0" value="4294">1976&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1975&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">1974&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1973&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">1972&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1971&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">1970&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1969&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="1104">1968&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">1967&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">1965&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">1964&nbsp;&nbsp;(3)</option>
+
+<br>
+</br>
+<br>
+</br>
+<br>
+</br>
+
+<li id="categories-1" class="widget widget_categories"><h4 class="widgettitle">Color*</h4>
+<select name='car' id='car' class='postform' >
+
+	<option value='-1'>Select color</option>
+	<option class="level-0" value="4294">Other&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">Beige&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">Gray&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">Silver&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">Yellow&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">Cropper&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1104">Black&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">Orange&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="1104">Red&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="610">Brown&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="4294">Blue&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">Turqoise&nbsp;&nbsp;(3)</option>
+        <option class="level-0" value="4294">White&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="780">Green&nbsp;&nbsp;(3)</option>
+
+<br>
+</br>
+<br>
+</br>
+<br>
+</br>
+
+</tr>
+</table>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>

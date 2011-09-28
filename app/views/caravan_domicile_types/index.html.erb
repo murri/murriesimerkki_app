@@ -1,0 +1,23 @@
+<h1>Listing caravan_domicile_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_domicile_types.each do |caravan_domicile_type| %>
+  <tr>
+    <td><%= caravan_domicile_type.name %></td>
+    <td><%= link_to 'Show', caravan_domicile_type %></td>
+    <td><%= link_to 'Edit', edit_caravan_domicile_type_path(caravan_domicile_type) %></td>
+    <td><%= link_to 'Destroy', caravan_domicile_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan domicile type', new_caravan_domicile_type_path %>

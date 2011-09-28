@@ -1,0 +1,2 @@
+module MachineTownTypeSectionsHelper
+end

@@ -1,0 +1,21 @@
+<%= form_for(@caravan_gross_weight) do |f| %>
+  <% if @caravan_gross_weight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@caravan_gross_weight.errors.count, "error") %> prohibited this caravan_gross_weight from being saved:</h2>
+
+      <ul>
+      <% @caravan_gross_weight.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

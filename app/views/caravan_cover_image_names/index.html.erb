@@ -1,0 +1,23 @@
+<h1>Listing caravan_cover_image_names</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caravan_cover_image_names.each do |caravan_cover_image_name| %>
+  <tr>
+    <td><%= caravan_cover_image_name.name %></td>
+    <td><%= link_to 'Show', caravan_cover_image_name %></td>
+    <td><%= link_to 'Edit', edit_caravan_cover_image_name_path(caravan_cover_image_name) %></td>
+    <td><%= link_to 'Destroy', caravan_cover_image_name, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caravan cover image name', new_caravan_cover_image_name_path %>

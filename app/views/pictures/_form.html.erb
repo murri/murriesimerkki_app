@@ -1,0 +1,25 @@
+<%= form_for(@picture) do |f| %>
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+
+      <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+<!--[form:image]-->
+<p><label for="image_name">Name</label><br/>
+<%= text_field 'image', 'name'  %></p>
+ 
+<p><label for="image_file">File</label><br/>
+<input type="file" name="image[file]" /></p>
+<!--[eoform:image]-->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

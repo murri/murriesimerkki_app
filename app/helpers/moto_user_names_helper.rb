@@ -1,0 +1,2 @@
+module MotoUserNamesHelper
+end

@@ -1,0 +1,23 @@
+<h1>Listing moto_user_names</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_user_names.each do |moto_user_name| %>
+  <tr>
+    <td><%= moto_user_name.name %></td>
+    <td><%= link_to 'Show', moto_user_name %></td>
+    <td><%= link_to 'Edit', edit_moto_user_name_path(moto_user_name) %></td>
+    <td><%= link_to 'Destroy', moto_user_name, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto user name', new_moto_user_name_path %>

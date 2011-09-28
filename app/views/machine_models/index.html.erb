@@ -1,0 +1,23 @@
+<h1>Listing machine_models</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @machine_models.each do |machine_model| %>
+  <tr>
+    <td><%= machine_model.name %></td>
+    <td><%= link_to 'Show', machine_model %></td>
+    <td><%= link_to 'Edit', edit_machine_model_path(machine_model) %></td>
+    <td><%= link_to 'Destroy', machine_model, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Machine model', new_machine_model_path %>

@@ -1,0 +1,2 @@
+module MachineMakeSectionsHelper
+end

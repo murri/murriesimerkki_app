@@ -1,0 +1,2 @@
+module DomicileTypesHelper
+end

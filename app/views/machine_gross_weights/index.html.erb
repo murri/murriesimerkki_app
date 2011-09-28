@@ -1,0 +1,23 @@
+<h1>Listing machine_gross_weights</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @machine_gross_weights.each do |machine_gross_weight| %>
+  <tr>
+    <td><%= machine_gross_weight.name %></td>
+    <td><%= link_to 'Show', machine_gross_weight %></td>
+    <td><%= link_to 'Edit', edit_machine_gross_weight_path(machine_gross_weight) %></td>
+    <td><%= link_to 'Destroy', machine_gross_weight, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Machine gross weight', new_machine_gross_weight_path %>

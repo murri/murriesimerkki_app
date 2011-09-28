@@ -1,0 +1,53 @@
+<h1>Editing upload</h1>
+
+<script type="text/javascript" language="Javascript">
+function showCoords( c ) {
+  $( 'upload_x1' ).val(c.x);
+  $( 'upload_y1' ).val(c.y);
+  $( 'upload_width' ).val(c.w);
+  $( 'upload_height' ).val(c.h);
+}
+$(function(){
+        $('#jcrop_target').Jcrop({
+                onChange: showCoords,
+                onSelect: showCoords
+        });
+});
+</script>
+ 
+<h1>Editing upload</h1>
+ 
+<% form_for(@upload) do |f| %>
+  <%= f.error_messages %>
+ 
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+ 
+  <!-- CROP FORM -->
+  <div id='jcrop_target'>
+    <%= image_tag @upload.photo.url, :id => 'cropimage' %>
+  </div>
+ 
+  <div id='cropresults'>
+    <%= f.label 'x1' %>
+    <%= f.text_field 'x1', :size => 6 %>
+    <br />
+    <%= f.label 'y1' %>
+    <%= f.text_field 'y1', :size => 6 %>
+    <br />
+    <%= f.label 'width' %>
+    <%= f.text_field 'width', :size => 6 %>
+    <br />
+    <%= f.label 'height' %>
+    <%= f.text_field 'height', :size => 6 %>
+    <br />
+  </div> <!-- cropresults -->
+  <!-- END CROP FORM -->
+ 
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+

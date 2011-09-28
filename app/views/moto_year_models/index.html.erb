@@ -1,0 +1,23 @@
+<h1>Listing moto_year_models</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moto_year_models.each do |moto_year_model| %>
+  <tr>
+    <td><%= moto_year_model.name %></td>
+    <td><%= link_to 'Show', moto_year_model %></td>
+    <td><%= link_to 'Edit', edit_moto_year_model_path(moto_year_model) %></td>
+    <td><%= link_to 'Destroy', moto_year_model, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Moto year model', new_moto_year_model_path %>

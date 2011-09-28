@@ -1,0 +1,23 @@
+<h1>Listing domicile_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @domicile_types.each do |domicile_type| %>
+  <tr>
+    <td><%= domicile_type.name %></td>
+    <td><%= link_to 'Show', domicile_type %></td>
+    <td><%= link_to 'Edit', edit_domicile_type_path(domicile_type) %></td>
+    <td><%= link_to 'Destroy', domicile_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Domicile type', new_domicile_type_path %>

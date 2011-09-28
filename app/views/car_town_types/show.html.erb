@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @car_town_type.name %>
+</p>
+
+<p>
+  <b>Car domicile type:</b>
+  <%= @car_town_type.car_domicile_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_car_town_type_path(@car_town_type) %> |
+<%= link_to 'Back', car_town_types_path %>

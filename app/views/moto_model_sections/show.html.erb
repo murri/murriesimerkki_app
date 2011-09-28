@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @moto_model_section.name %>
+</p>
+
+<p>
+  <b>Make:</b>
+  <%= @moto_model_section.make_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_moto_model_section_path(@moto_model_section) %> |
+<%= link_to 'Back', moto_model_sections_path %>

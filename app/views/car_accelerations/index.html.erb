@@ -1,0 +1,23 @@
+<h1>Listing car_accelerations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @car_accelerations.each do |car_acceleration| %>
+  <tr>
+    <td><%= car_acceleration.name %></td>
+    <td><%= link_to 'Show', car_acceleration %></td>
+    <td><%= link_to 'Edit', edit_car_acceleration_path(car_acceleration) %></td>
+    <td><%= link_to 'Destroy', car_acceleration, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Car acceleration', new_car_acceleration_path %>

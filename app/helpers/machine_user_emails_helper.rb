@@ -1,0 +1,2 @@
+module MachineUserEmailsHelper
+end

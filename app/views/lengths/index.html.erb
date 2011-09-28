@@ -1,0 +1,23 @@
+<h1>Listing lengths</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lengths.each do |length| %>
+  <tr>
+    <td><%= length.name %></td>
+    <td><%= link_to 'Show', length %></td>
+    <td><%= link_to 'Edit', edit_length_path(length) %></td>
+    <td><%= link_to 'Destroy', length, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Length', new_length_path %>

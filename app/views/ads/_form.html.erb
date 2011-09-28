@@ -1,0 +1,126 @@
+<div style="overflow:auto; height: 500px; width:690px">
+<table cellpadding="0" cellspacing="0" style="width:1500px;">
+<tr>
+
+
+<%= form_for(@ad) do |f| %>
+  <% if @ad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+
+      <ul>
+      <% @ad.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<p><label for="image_file">Add images</label><br/>
+<input type="file" name="image[file]" /></p>
+<!--[eoform:image]-->
+
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :make %><br />
+    <%= f.text_field :make %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :subtype %><br />
+    <%= f.text_field :subtype %>
+  </div>
+  <div class="field">
+    <%= f.label :yearmodel %><br />
+    <%= f.date_select :yearmodel %>
+  </div>
+  <div class="field">
+    <%= f.label :registration %><br />
+    <%= f.date_select :registration %>
+  </div>
+  <div class="field">
+    <%= f.label :inspectiondate %><br />
+    <%= f.date_select :inspectiondate %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :colortype %><br />
+    <%= f.text_field :colortype %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :registernumber %><br />
+    <%= f.text_field :registernumber %>
+  </div>
+  <div class="field">
+    <%= f.label :information %><br />
+    <%= f.text_area :information %>
+  </div>
+  <div class="field">
+    <%= f.label :mileage %><br />
+    <%= f.text_field :mileage %>
+  </div>
+  <div class="field">
+    <%= f.label :enginesize %><br />
+    <%= f.text_field :enginesize %>
+  </div>
+  <div class="field">
+    <%= f.label :drivetype %><br />
+    <%= f.text_field :drivetype %>
+  </div>
+  <div class="field">
+    <%= f.label :fuel %><br />
+    <%= f.text_field :fuel %>
+  </div>
+  <div class="field">
+    <%= f.label :transmission %><br />
+    <%= f.text_field :transmission %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br />
+    <%= f.text_field :power %>
+  </div>
+  <div class="field">
+    <%= f.label :emission %><br />
+    <%= f.text_field :emission %>
+  </div>
+  <div class="field">
+    <%= f.label :topspeed %><br />
+    <%= f.text_field :topspeed %>
+  </div>
+  <div class="field">
+    <%= f.label :acceleration %><br />
+    <%= f.text_field :acceleration %>
+  </div>
+  <div class="field">
+    <%= f.label :consumption %><br />
+    <%= f.text_field :consumption %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :domicile %><br />
+    <%= f.text_field :domicile %>
+  </div>
+  <div class="field">
+    <%= f.label :town %><br />
+    <%= f.text_field :town %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

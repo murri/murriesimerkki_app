@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Industry:</b>
+  <%= @caravan.industry_id %>
+</p>
+
+<p>
+  <b>Focusing section:</b>
+  <%= @caravan.focusing_section_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_caravan_path(@caravan) %> |
+<%= link_to 'Back', caravans_path %>
